@@ -1,0 +1,106 @@
+
+\sloppy
+\begin{center}{\fontsize{16pt}{16pt}\selectfont \textbf{MATERI GIT} \\}\end{center} \par
+\noindent 
+\begin{center}{\fontsize{14pt}{14pt}\selectfont \textbf{Git}\textbf{ Perform Changes} \\}\end{center} \par
+\vspace{12pt}
+\noindent 
+{\fontsize{14pt}{14pt}\selectfont \textbf{Dasar}\textbf{ }\textbf{Git} \\} \par
+\noindent 
+Jadi, sebenarnya apa yang dimaksud dengan Git? Ini adalah bagian penting untuk dipahami, karena jika anda memahami apa itu Git dan cara kerja, maka dapat dipastikan anda dapat menggunakan Git secara efektif dengan mudah. Selama menerapkan Git, cobalah untuk menggantikan VCS lain yang mungkin sudah anda kenal sebelumnya, misalnya Subversion dan Perforce. Git sangat berbeda dengan sistem-sistem ini dalam hal simpan atau informasi yang digunakan, meski antar muka sangat mirip. Dengan memahami perbedaan ini diharapkan dapat membantu anda menghindari penggunaan saat menggunakan Git. \par
+\noindent 
+Snapshot, Bukan Perbedaan \par
+\noindent 
+Salah satu perbedaan yang mencolok antar Git dengan VCS lainnya (Subversion dan kawan-kawan) adalah dalam cara Git para datanya. Konsep konseptual,. Sistem seperti ini (CVS, Subversion, Bazaar, dan yang lainnya) informasi yang tersimpannya sebagai sekumpulan berkas dan perubahan yang terjadi pada berkas-berkas tersebut, \par
+\noindent 
+Git dianggap datanya sebagai sebuah kumpulan snapshot dari sebuah miniatur sistem. Setiap kali anda melakukan komit, atau melakukan perubahan pada proyek Git anda, pada butir Git anda secara otomatis. Agar efisien, jika berkas tidak mengalami perubahan, Git tidak akan menyimpan file tersebut pada hanya pada file yang sama yang sebelumnya telah disimpan. \par
+\vspace{12pt}
+\noindent 
+Git Punya Integritas \par
+\noindent 
+Segala sesuatu pada Git akan melalui proses checksum terlebih dahulu sebelum disimpan yang kemudian direferensikan oleh hasil checksum tersebut. Hal ini berarti tidak mungkin melakukan perubahan terhadap berkas manapun tanpa diketahui oleh Git. Fungsionalitas ini dimiliki oleh Git pada level terendahnya dan ini merupakan bagian tak terpisahkan dari filosofi Git. Anda tidak akan kehilangan informasi atau file yang tidak dimiliki oleh Git. \par
+\vspace{12pt}
+\noindent 
+Mekanisme checksum yang digunakan oleh Git adalah SHA-1 hash. Ini merupakan sebuah susunan string yang terdiri dari 40 karakter heksadesimal (0 sampai 9 dan a sampai f) dan dihitung berdasarkan bentuk dari suatu berkas atau struktur pada pada Git. sebuah hash SHA-1 seperti berikut: \par
+\noindent 
+Anda akan melihat seperti ini pada berbagai tempat di Git. Faktanya, Git tidak memiliki nama file pada basisdatanya, pela nilai hash dari isi berkas. \par
+\vspace{12pt}
+\noindent 
+Secara Umum Git Hanya Selesai Data \par
+\noindent 
+Bila anda melakukan operasi pada Git, hanya dari penambahan data pada basisdata Git. Sangat sulit membuat sistem melakukan sesuatu yang tidak bisa diurungkan atau membuatnya menghapus data dengan cara apa pun. Seperti pada berbagai VCS, anda bisa kehilangan atau mengacaukan perubahan yang belum di-commit; namun jika anda melakukan komit pada Git, akan sangat sulit kehilanngannya, apalagi jika anda secara teratur melakukan push basisdata anda pada repositori lain. \par
+\noindent 
+Hal ini membuat Git menyenangkan karena kita dapat berexperimen tanpa kehawatiran untuk mengacaukan proyek. Untuk lebih jelas dan dalam lagi tentang bagaimana Git menyimpan datanya dan bagaimana anda bisa mengembalikan yang hilang \par
+\noindent 
+Direktori Git adalah dimana Git menyimpan metadata dan database objek untuk projek anda. Ini adalah bahagian penting dari Git, dan inilah yang disalin saat anda melakukan kloning sebuah repositori dari komputer lain. \par
+\noindent 
+Direktori kerja adalah sebuah checkout tunggal dari satu versi dari projek. File-berkas ini kemudian ditarik keluar dari basisdata yang terkompresi dalam direktori Git dan disimpan pada disk untuk anda pakai atau modifikasi. \par
+\vspace{12pt}
+\noindent 
+Pementasan daerah adalah sebuah berkas sederhana, yang berada dalam direktori Git anda, yang mohon informasi mengenai apa yang menjadi komit selanjutnya. Ini disebut sebagai indeks, tapi semakin menjadi standar untuk maju sebagai area pementasan. \par
+\noindent 
+Alur kerja dasar Git adalah seperti ini: \par
+\noindent 
+Anda mengubah berkas dalam direktori kerja anda. \par
+\noindent 
+Anda membawa ke tahap, menambahkan snapshotnya ke area stage. \par
+\noindent 
+Anda melakukan komit, yang mengambil contoh seperti yang ada di daerah pementasan dan menyimpannya secara otomatis. \par
+\noindent 
+Jika sebuah versi tertentu dari sebuah berkas telah ada di direktori git, ia dianggap 'berkomitmen'. Jika berkas diubah (sudah diubah) maka sudah ditambahkan ke area stage, maka itu adalah 'staged'. Dan jika berkas telah diubah sejak terakhir dilakukan check out belum ditambahkan ke area stage maka itu adalah 'modified'. Pada Bab 2, anda akan lebih banyak membahas mengenai keadaan-keadaan ini dan bagaimana anda dapat memanfaatkan keadaan-keadaan yang bersangkutan dengan bagian 'bertahap'. \par
+\vspace{12pt}
+\noindent 
+{\fontsize{14pt}{14pt}\selectfont \textbf{Seperti}\textbf{ }\textbf{Ini}\textbf{ Perform Changes} \\} \par
+\noindent 
+Jerry mengkloning repositori dan memutuskan untuk menerapkan operasi string dasar. Jadi dia menciptakan file string.c. Setelah menambahkan isinya, string.c akan terlihat seperti berikut: \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  \#  $include <stdio.h> \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in} int my $  \_  $strlen (char * s) \par
+\noindent 
+ \hspace*{0.5in}  $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $char * p = s; \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $sementara (* p) \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  $ $  $ $  $++ p; \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $return (p - s); \par
+\noindent 
+ \hspace*{0.5in}  $  \}  $ \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in} int main (void) \par
+\noindent 
+ \hspace*{0.5in}  $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $int i; \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $char * s [] = \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  $ $  $ $  $"Git tutorial", \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  $ $  $ $  $"Tutorial Point" \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  \}  $; \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $untuk (i = 0; i <2; ++ i) $  $ $  $ $  $ $  $ $  $ $  $ \par
+\noindent 
+ $  $ $  $ $  $ \hspace*{0.5in} printf ("panjang string $  \%  $ s = $  \%  $ d  $  \textbackslash  $ n", s [i], my $  \_  $strlen (s [i])); \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $kembali 0; \par
+\noindent 
+ \hspace*{0.5in}  $  \}  $ \par
+\vspace{12pt}
+\noindent 
+Dia menyusun dan menguji kodenya dan semuanya berjalan baik. Sekarang, dia bisa menambahkan perubahan ini ke repositori dengan aman. \par
+
