@@ -1,0 +1,221 @@
+
+\sloppy
+\begin{center}{\fontsize{16pt}{16pt}\selectfont \textbf{MATERI GIT} \\}\end{center} \par
+\noindent 
+\begin{center}{\fontsize{14pt}{14pt}\selectfont \textbf{Git Perform Changes} \\}\end{center} \par
+\vspace{12pt}
+\noindent 
+{\fontsize{14pt}{14pt}\selectfont \textbf{Dasar Git} \\} \par
+\noindent 
+Jadi, sebenarnya apa yang dimaksud dengan Git? Ini adalah bagian penting untuk dipahami, karena jika anda memahami apa itu Git dan cara kerja, maka dapat dipastikan anda dapat menggunakan Git secara efektif dengan mudah. Selama menerapkan Git, cobalah untuk menggantikan VCS lain yang mungkin sudah anda kenal sebelumnya, misalnya Subversion dan Perforce. Git sangat berbeda dengan sistem-sistem ini dalam hal simpan atau informasi yang digunakan, meski antar muka sangat mirip. Dengan memahami perbedaan ini diharapkan dapat membantu anda menghindari penggunaan saat menggunakan Git. \par
+\noindent 
+Snapshot, Bukan Perbedaan \par
+\noindent 
+Salah satu perbedaan yang mencolok antar Git dengan VCS lainnya (Subversion dan kawan-kawan) adalah dalam cara Git para datanya. Konsep konseptual,. Sistem seperti ini (CVS, Subversion, Bazaar, dan yang lainnya) informasi yang tersimpannya sebagai sekumpulan berkas dan perubahan yang terjadi pada berkas-berkas tersebut, \par
+\noindent 
+Git dianggap datanya sebagai sebuah kumpulan snapshot dari sebuah miniatur sistem. Setiap kali anda melakukan komit, atau melakukan perubahan pada proyek Git anda, pada butir Git anda secara otomatis. Agar efisien, jika berkas tidak mengalami perubahan, Git tidak akan menyimpan file tersebut pada hanya pada file yang sama yang sebelumnya telah disimpan. \par
+\vspace{12pt}
+\noindent 
+Git Punya Integritas \par
+\noindent 
+Segala sesuatu pada Git akan melalui proses checksum terlebih dahulu sebelum disimpan yang kemudian direferensikan oleh hasil checksum tersebut. Hal ini berarti tidak mungkin melakukan perubahan terhadap berkas manapun tanpa diketahui oleh Git. Fungsionalitas ini dimiliki oleh Git pada level terendahnya dan ini merupakan bagian tak terpisahkan dari filosofi Git. Anda tidak akan kehilangan informasi atau file yang tidak dimiliki oleh Git. \par
+\vspace{12pt}
+\noindent 
+Mekanisme checksum yang digunakan oleh Git adalah SHA-1 hash. Ini merupakan sebuah susunan string yang terdiri dari 40 karakter heksadesimal (0 sampai 9 dan a sampai f) dan dihitung berdasarkan bentuk dari suatu berkas atau struktur pada pada Git. sebuah hash SHA-1 seperti berikut: \par
+\noindent 
+Anda akan melihat seperti ini pada berbagai tempat di Git. Faktanya, Git tidak memiliki nama file pada basisdatanya, pela nilai hash dari isi berkas. \par
+\vspace{12pt}
+\noindent 
+Secara Umum Git Hanya Selesai Data \par
+\noindent 
+Bila anda melakukan operasi pada Git, hanya dari penambahan data pada basisdata Git. Sangat sulit membuat sistem melakukan sesuatu yang tidak bisa diurungkan atau membuatnya menghapus data dengan cara apa pun. Seperti pada berbagai VCS, anda bisa kehilangan atau mengacaukan perubahan yang belum di-commit; namun jika anda melakukan komit pada Git, akan sangat sulit kehilanngannya, apalagi jika anda secara teratur melakukan push basisdata anda pada repositori lain. \par
+\noindent 
+Hal ini membuat Git menyenangkan karena kita dapat berexperimen tanpa kehawatiran untuk mengacaukan proyek. Untuk lebih jelas dan dalam lagi tentang bagaimana Git menyimpan datanya dan bagaimana anda bisa mengembalikan yang hilang \par
+\noindent 
+Direktori Git adalah dimana Git menyimpan metadata dan database objek untuk projek anda. Ini adalah bahagian penting dari Git, dan inilah yang disalin saat anda melakukan kloning sebuah repositori dari komputer lain. \par
+\noindent 
+Direktori kerja adalah sebuah checkout tunggal dari satu versi dari projek. File-berkas ini kemudian ditarik keluar dari basisdata yang terkompresi dalam direktori Git dan disimpan pada disk untuk anda pakai atau modifikasi. \par
+\vspace{12pt}
+\noindent 
+Pementasan daerah adalah sebuah berkas sederhana, yang berada dalam direktori Git anda, yang mohon informasi mengenai apa yang menjadi komit selanjutnya. Ini disebut sebagai indeks, tapi semakin menjadi standar untuk maju sebagai area pementasan. \par
+\noindent 
+Alur kerja dasar Git adalah seperti ini: \par
+\noindent 
+Anda mengubah berkas dalam direktori kerja anda. \par
+\noindent 
+Anda membawa ke tahap, menambahkan snapshotnya ke area stage. \par
+\noindent 
+Anda melakukan komit, yang mengambil contoh seperti yang ada di daerah pementasan dan menyimpannya secara otomatis. \par
+\noindent 
+Jika sebuah versi tertentu dari sebuah berkas telah ada di direktori git, ia dianggap 'berkomitmen'. Jika berkas diubah (sudah diubah) maka sudah ditambahkan ke area stage, maka itu adalah 'staged'. Dan jika berkas telah diubah sejak terakhir dilakukan check out belum ditambahkan ke area stage maka itu adalah 'modified'. Pada Bab 2, anda akan lebih banyak membahas mengenai keadaan-keadaan ini dan bagaimana anda dapat memanfaatkan keadaan-keadaan yang bersangkutan dengan bagian 'bertahap'. \par
+\vspace{12pt}
+\noindent 
+{\fontsize{14pt}{14pt}\selectfont \textbf{Seperti Ini Perform Changes} \\} \par
+\noindent 
+Jerry mengkloning repositori dan memutuskan untuk menerapkan operasi string dasar. Jadi dia menciptakan file string.c. Setelah menambahkan isinya, string.c akan terlihat seperti berikut: \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  \#  $include <stdio.h> \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in} int my $  \_  $strlen (char * s) \par
+\noindent 
+ \hspace*{0.5in}  $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $char * p = s; \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $sementara (* p) \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  $ $  $ $  $++ p; \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $return (p - s); \par
+\noindent 
+ \hspace*{0.5in}  $  \}  $ \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in} int main (void) \par
+\noindent 
+ \hspace*{0.5in}  $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $int i; \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $char * s [] = \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  $ $  $ $  $"Git tutorial", \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  $ $  $ $  $"Tutorial Point" \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $ $  \}  $; \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $untuk (i = 0; i <2; ++ i) $  $ $  $ $  $ $  $ $  $ $  $ \par
+\noindent 
+ $  $ $  $ $  $ \hspace*{0.5in} printf ("panjang string $  \%  $ s = $  \%  $ d  $  \textbackslash  $ n", s [i], my $  \_  $strlen (s [i])); \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $kembali 0; \par
+\noindent 
+ \hspace*{0.5in}  $  \}  $ \par
+\vspace{12pt}
+\noindent 
+Dia menyusun dan menguji kodenya dan semuanya berjalan baik. Sekarang, dia bisa menambahkan perubahan ini ke repositori dengan aman. \par
+\vspace{12pt}
+\noindent 
+Git menambahkan operasi menambahkan file ke area stage. \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS project]  $  \$  $ git status -s \par
+\noindent 
+?? tali \par
+\noindent 
+?? string.c \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS project]  $  \$  $ git add string.c \par
+\noindent 
+Git menunjukkan tanda tanya sebelum nama file. Jelas, file-file ini bukan bagian dari Git, dan karena itulah Git tidak tahu apa yang harus dilakukan dengan file-file ini. Itu sebabnya, Git menunjukkan tanda tanya sebelum nama file. \par
+\vspace{12pt}
+\noindent 
+Jerry telah menambahkan file ke area penyimpanan, perintah status git akan menampilkan file yang ada di area stage. \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS project]  $  \$  $ git status -s \par
+\noindent 
+String.c \par
+\noindent 
+?? tali \par
+\noindent 
+Untuk melakukan perubahan, dia menggunakan perintah komit git diikuti dengan opsi -m. Jika kita menghilangkan opsi -m. Git akan membuka text editor dimana kita bisa menulis multiline commit message. \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS project]  $  \$  $ git commit -m 'Implementasikan fungsi my $  \_  $strlen' \par
+\noindent 
+Perintah di atas akan menghasilkan hasil sebagai berikut: \par
+\vspace{12pt}
+\noindent 
+[master cbe1249] Melaksanakan fungsi my $  \_  $strlen \par
+\noindent 
+1 file berubah, 24 sisipan (+), 0 penghapusan (-) \par
+\noindent 
+buat mode 100644 string.c \par
+\noindent 
+Setelah berkomitmen untuk melihat rincian log, dia menjalankan perintah git log. Ini akan menampilkan informasi dari semua commit dengan commit komit mereka, commit author, commit date dan SHA-1 hash of commit. \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS project]  $  \$  $ git log \par
+\noindent 
+Perintah di atas akan menghasilkan hasil sebagai berikut: \par
+\vspace{12pt}
+\noindent 
+melakukan cbe1249b140dad24b2c35b15cc7e26a6f02d2277 \par
+\noindent 
+Penulis: Jerry Mouse <jerry@tutorialspoint.com> \par
+\noindent 
+Tanggal: Rabu Sep 11 08:05:26 2013 +0530 \par
+\vspace{12pt}
+\noindent 
+Diimplementasikan fungsi my $  \_  $strlen \par
+\vspace{12pt}
+\vspace{12pt}
+\noindent 
+komit 19ae20683fc460db7d127cf201a1429523b0e319 \par
+\noindent 
+Penulis: Tom Cat <tom@tutorialspoint.com> \par
+\noindent 
+Tanggal: Rabu Sep 11 07:32:56 2013 +0530 \par
+\vspace{12pt}
+\noindent 
+Komit awal \par
+\vspace{12pt}
+\vspace{12pt}
+\vspace{12pt}
+\vspace{12pt}
+\vspace{12pt}
+\noindent 
+Jerry memeriksa versi terbaru dari repositori dan mulai mengerjakan sebuah proyek. Dia membuat file array.c di dalam direktori trunk. \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS  $  \sim  $]  $  \$  $ cd project $  \_  $repo / trunk / \par
+\vspace{12pt}
+\noindent 
+[jerry @ CentOS trunk]  $  \$  $ cat array.c \par
+\noindent 
+Perintah di atas akan menghasilkan hasil berikut. \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  \#  $include <stdio.h> \par
+\noindent 
+ \hspace*{0.5in}  $  \#  $define MAX 16 \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in} int main (void)  $  \{  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $int i, n, arr [MAX]; \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $printf ("Masukkan jumlah elemen:"); \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $scanf (" $  \%  $ d",  $  \&  $ n); \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $printf ("Enter the elements  $  \textbackslash  $ n"); \par
+\vspace{12pt}
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $untuk (i = 0; i <n; ++ i) scanf (" $  \%  $ d",  $  \&  $ arr [i]); \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $printf ("Array memiliki elemen berikut  $  \textbackslash  $ n"); \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $untuk (i = 0; i <n; ++ i) printf (" $  \vert  $ $  \%  $ d  $  \vert  $", arr [i]); \par
+\noindent 
+ $  $ $  $ $  $ \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $printf (" $  \textbackslash  $ n"); \par
+\noindent 
+ \hspace*{0.5in}  $  $ $  $ $  $kembali 0; \par
+\noindent 
+ \hspace*{0.5in}  $  \}  $ \par
+\vspace{12pt}
+
