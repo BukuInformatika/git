@@ -203,9 +203,12 @@ Setelah melakukan inisialisasi, git secara otomatis akan membuat direktori .git 
 {\fontsize{10pt}{10pt}\selectfont  $  \$  $ ls -a} \par
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont .~~..~ .git  cerita.txt} \par
-\noindent 
 \vspace{10pt}
-\noindent 
+\vspace{10pt}
+\vspace{10pt}
+\vspace{10pt}
+\vspace{10pt}
+\vspace{10pt}
 \textbf{14.3 }\textbf{Penambahan File ke Repository} \par
 \noindent 
  \hspace*{0.64in} Penyimpanan sejarah dapat dimulai dari saat pertama: kapan file tersebut dibuat dan ditambahkan ke dalam repositori. Untuk menambahkan file ke dalam repositori, gunakan perintah git add: \par
@@ -239,9 +242,8 @@ Setelah menambahkan file ke dalam repositori, harus melakukan \emph{commit}. Per
 {\fontsize{10pt}{10pt}\selectfont The file will have its original line endings in your working directory.} \par
 {\fontsize{10pt}{10pt}\selectfont  1 file changed, 1 insertion(+)} \par
 {\fontsize{10pt}{10pt}\selectfont  create mode 100644 cerita.txt} \par
-\noindent 
 \vspace{12pt}
-\noindent 
+\vspace{10pt}
 \textbf{14.4}\textbf{ Mengubah Isi File} \par
 Kegunaan utama kontrol versi (yang tercermin dari namanya) ialah melakukan manajemen perubahan secara otomatis untuk kita. dan kemudian jalankan perintah git commit lagi: \par
 {\fontsize{10pt}{10pt}\selectfont bert@LYNNSLENIA  $  \sim  $/Desktop/projects/git-tutor (master)} \par
@@ -477,11 +479,7 @@ Jika ingin melihat apa saja yang diubah pada file {\fontsize{10pt}{10pt}\selectf
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont -Kera ini bernama Sun Go Kong. Dari manakah Sun Go Kong berasal?} \par
 \noindent 
-{\fontsize{10pt}{10pt}\selectfont  $  \textbackslash  $ No newline at end of file} \par
-\noindent 
 {\fontsize{10pt}{10pt}\selectfont +Kera ini bernama Sun Go Kong. Dari manakah Sun Go Kong berasal???!} \par
-\noindent 
-{\fontsize{10pt}{10pt}\selectfont  $  \textbackslash  $ No newline at end of file} \par
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont (END)} \par
 Format yang ditampilkan mungkin agak membingungkan, tetapi tidak usah takut, karena bagian yang perlu diperhatikan hanyalah pada bagian yang bertanda - dan +. Pada git bash, bahkan bagian ini diberi warna (merah untuk - dan hijau untuk +). Tanda +, tentunya berarti bagian yang ditambahkan, dan tanda - berarti bagian yang dihapus. Dengan melihat perubahan pada baris yang bersangkutan, kita dapat mengetahui bahwa ? diubah menjadi ???! pada akhir baris. \par
@@ -531,8 +529,6 @@ Setelah mengetahui perubahan yang dilakukan, dan menganggap perubahan tersebut a
 \vspace{10pt}
 {\fontsize{10pt}{10pt}\selectfont ~~~ Inisialisasi repo. Penambahan cerita.txt.} \par
 \vspace{12pt}
-\vspace{12pt}
-\noindent 
 \subsection*{14.5 Membaca File Lama, dan Menjalankan Mesin Waktu}
  \par
 Nomor revisi, seperti yang telah dijelaskan sebelumnya, berguna sebagai tanda untuk memisahkan antara satu \emph{commit} dengan \emph{commit} lainnya. Misalnya jika  ingin melihat isi file cerita.txt pada saat awal pertama kali dibuat, kita dapat menggunakan perintah git show, yang sintaksnya adalah: \par
