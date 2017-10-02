@@ -544,11 +544,11 @@ Hal berguna lain yang Anda dapat lakukan adalah untuk tetap menyimpan berkas di 
 Anda dapat menambahkan nama berkas, direktori, dan pola glob ke perintah git rm. Ini berarti Anda dapat melakukan hal seperti \par
 \vspace{12pt}
 \noindent 
- $  \$  $ git rm log/ $  \textbackslash  $*.log \par
+ $  \$  $ git rm log/ $  \setminus  $*.log \par
 \noindent 
-Perhatikan karakter backslash ( $  \textbackslash  $) di depan tanda *. Ini dibutuhkan agar Git juga meng-ekspansi nama berkas sebagai tambahan dari ekspansi nama berkas oleh shell Anda. Perintah ini mengapus semua berkas yang memiliki ekstensi .log di dalam direktori log/. Atau, Anda dapat melakukannya seperti ini: \par
+Perhatikan karakter backslash ( $  \setminus  $) di depan tanda *. Ini dibutuhkan agar Git juga meng-ekspansi nama berkas sebagai tambahan dari ekspansi nama berkas oleh shell Anda. Perintah ini mengapus semua berkas yang memiliki ekstensi .log di dalam direktori log/. Atau, Anda dapat melakukannya seperti ini: \par
 \noindent 
- $  \$  $ git rm  $  \textbackslash  $* $  \sim  $ \par
+ $  \$  $ git rm  $  \setminus  $* $  \sim  $ \par
 \noindent 
 Tidak seperti kebanyakan sistem VCS lainnya, Git tidak secara eksplisit memantau perpindahan berkas. Jika Anda mengubag nama berkas di Git, tidak ada metada yang tersimpan di Git yang menyatakan bahwa Anda mengubah nama berkas tersebut. Namun demikian, Git cukup cerdas untuk menemukannya berdasarkan fakta yang ada - kita akan membicarakan tentang mendeteksi perpindahan berkas sebentar lagi. \par
 \noindent 
