@@ -100,15 +100,14 @@ README src string \par
 string.c \par
 \vspace{12pt}
 \noindent 
-\textbf{13.1 }{Hampir Semua Operasi Dilakukan Secara Lokal}
- \par
+\subsection*{13.1 Semua Operasi Dilakukan Secara Lokal }
+\par
 Kebanyakan operasi pada Git hanya membutuhkan berkas-berkas dan resource lokal – tidak ada informasi yang dibutuhkan dari komputer lain pada jaringan. Jika terbiasa dengan VCS terpusat dimana kebanyakan operasi memiliki overhead latensi jaringan, aspek Git satu ini akan membuat berpikir bahwa para dewa kecepatan telah memberkati Git dengan kekuatan. Karena memiliki seluruh sejarah dari proyek di lokal disk, dengan kebanyakan operasi yang tampak hampir seketika. \par
 Sebagai contoh, untuk melihat history dari proyek, Git tidak membutuhkan data histori dari server untuk kemudian menampilkannya untuk, namun secara sedarhana Git membaca historinya langsung dari basisdata lokal proyek tersebut. Ini berarti melihat histori proyek hampir secara instant. Jika ingin membandingkan perubahan pada sebuah berkas antara versi saat ini dengan versi sebulan yang lalu, Git dapat mencari berkas yang sama pada sebulan yang lalu dan melakukan pembandingan perubahan secara lokal, bukan dengan cara meminta remote server melakukannya atau meminta server mengirimkan berkas versi yang lebih lama kemudian membandingkannya secara lokal. \par
 Hal ini berarti bahwa sangat sedikit yang tidak bisa anda kerjakan jika sedang offline atau berada diluar VPN. Jika sedang berada dalam pesawat terbang atau sebuah kereta dan ingin melakukan pekerjaan kecil, dapat melakukan commit sampai anda memperoleh koneksi internet hingga anda dapat menguploadnya. Jika pulang ke rumah dan VPN client tidak bekerja dengan benar, tetap dapat bekerja. Pada kebanyakan sistem lainnya, melakukan hal ini cukup sulit atau bahkan tidak mungkin sama sekali. Pada Perforce misalnya, tidak dapat berbuat banyak ketika tidak terhubung dengan server; pada Subversion dan CVS,  dapat mengubah berkas, tapi tidak dapat melakukan commit pada basisdata (karena tidak terhubung dengan basisdata). Hal ini mungkin saja bukanlah masalah yang besar, namun akan terkejut dengan perbedaan besar yang disebabkannya. \par
-\vspace{12pt}
-\noindent 
-\subsubsection*{13.2 }
- \par
+
+\subsection*{13.2 Git Memiliki Integritas }
+\par
 Segala sesuatu pada Git akan melalui proses checksum terlebih dahulu sebelum disimpan yang kemudian direferensikan oleh hasil checksum tersebut. Hal ini berarti tidak mungkin melakukan perubahan terhadap berkas manapun tanpa diketahui oleh Git. Fungsionalitas ini dimiliki oleh Git pada level terendahnya dan ini merupakan bagian tak terpisahkan dari filosofi Git. Tidak akan kehilangan informasi atau mendapatkan file yang cacat tanpa diketahui oleh Git. \par
 Mekanisme checksum yang digunakan oleh Git adalah SHA-1 hash. Ini merupakan sebuah susunan string yang terdiri dari 40 karakter heksadesimal (0 hingga 9 dan a hingga f) dan dihitung berdasarkan isi dari sebuah berkas atau struktur direktori pada Git. sebuah hash SHA-1 berupa seperti berikut: \par
 \noindent 
@@ -124,10 +123,8 @@ Staging area adalah sebuah berkas sederhana, umumnya berada dalam direktori Git,
 \noindent 
  \par
 Jika sebuah versi tertentu dari sebuah berkas telah ada di direktori git dianggap 'committed'. Jika berkas diubah (modified) tetapi sudah ditambahkan ke staging area  maka itu adalah 'staged'. Dan jika berkas telah diubah sejak terakhir dilakukan checked out tetapi belum ditambahkan ke staging area maka itu adalah 'modified'.  \par
-\noindent 
 \subsection*{13.3 Perintah Untuk Membuat Sebuah Proyek }
  \par
-\vspace{12pt}
 Membuat direktori baru di repositori Git dengan git init. Melakukan direktori setiap saat, benar-benar lokal. Executive git init dalam direktori, Membuat Git repositori. Sebagai contoh, buat item w3big:  \par
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont  $  \$  $ mkdir w3big} \par
@@ -188,15 +185,8 @@ operasi akan menyalin semua catatan proyek.  \par
 {\fontsize{10pt}{10pt}\selectfont branches~~~~hooks~~~~~~~logs~~~~~   refs} \par
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont config~~~~~~index~~~~~  objects} \par
-\noindent 
-\vspace{10pt}
-\noindent 
-\vspace{10pt}
-\noindent 
- \hspace*{0.64in} Secara default, Git akan mengikuti nama URL yang tersedia item untuk membuat direktori proyek lokalditunjukkan. URL biasanya nama item terakhir / setelah. Jika ingin nama yang berbeda  dapat menambahkan nama yang inginkan setelah perintah. \par
-\noindent 
 \vspace{12pt}
-\noindent 
+Secara default, Git akan mengikuti nama URL yang tersedia item untuk membuat direktori proyek lokalditunjukkan. URL biasanya nama item terakhir / setelah. Jika ingin nama yang berbeda  dapat menambahkan nama yang inginkan setelah perintah. \par
 \subsection*{13.4 Snapshot Dasar }
  \par
 Pekerjaan Git adalah untuk membuat dan menyimpan snapshot dari proyek dan setelah snapshot dan membandingkan. Bab ini akan tentang menciptakan sebuah snapshot dari proyek  dan mengirimkan pengenalan perintah. \par
@@ -323,7 +313,7 @@ Masukkan berikut dalam file hello.php:  \par
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont +<?php} \par
 \noindent 
-{\fontsize{10pt}{10pt}\selectfont +echo '本教程：www.w3big.com';} \par
+{\fontsize{10pt}{10pt}\selectfont +echo '：www.w3big.com';} \par
 \noindent 
 {\fontsize{10pt}{10pt}\selectfont +?>} \par
 \noindent 
