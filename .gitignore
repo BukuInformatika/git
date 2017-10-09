@@ -1,3 +1,6 @@
+
+.DS_Store
+git.pdf
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
