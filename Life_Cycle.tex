@@ -1,5 +1,5 @@
 \sloppy
-\begin{center}Life Cycle\end{center} \par
+\section{Life Cycle}
 \vspace{12pt}
 \noindent 
 Git adalah sebuah perangkat lunak untuk mengontrol versi sebuah perangkat lunak "VCS/Version Control System". Git diciptakan oleh Linux Torvalds, yang pada awalnya ditujukan untuk pengembangan kernel Linux. Saat ini banyak perangkat lunak yang terkenal menggunakan Git sebagai pengotrol revisinya. \par
@@ -8,25 +8,18 @@ Git adalah sebuah perangkat lunak untuk mengontrol versi sebuah perangkat lunak 
 Pada tutorial ini Anda akan mempelajari bagaimana cara menggunakan Git seperti proses life cycle Git, operasi-operasi dasar dan bagaimana cara menangani masalah saat menggunakan Git. \par
 \vspace{12pt}
 \noindent 
-Activity life cycle adalah sebuah siklus kehidupan activity. Sangat penting untuk memahami activity lifecyle ini untuk menghindari kebocoran memory. Dengan mengimplementasikan activity lifecyle ini kita bisa mengoptimalkan perfoma dari aplikasi yang kita buat. Setidaknya ada 6 siklus activity yang perlu kita pelajari, yaitu $  $onCreate, onStart, onResume onPause, onStop, dan onDestroy.  $  \#  $ $  \#  $ $  \#  $1. onCreate OnCreate adalah state pada saat sebuah halaman atau activity pertama kali di buat atau di atach kedakam memory. OnCreate ini hanya di jalankan pada saat pertama kali di buat, jika sebuah acivity telah tersedia dalam backstact oncreate ini tidak di panggil lagi. \par
-\vspace{12pt}
-\noindent 
- $  \#  $ $  \#  $ $  \#  $2. onStart OnStart adalah state setelah oncreate di jalankan. OnStart juga tetap di jalankan walaupun oncreate tidak di panggil dengan sarat sebuah activity telah tersimpan di dalam backstact memory. OnStart ini juga di jalankan jika masih berada dalam state onStop. \par
-\vspace{12pt}
-\noindent 
- $  \#  $ $  \#  $ $  \#  $3. onResume OnResume di eksekusi setelah on start. OnResume ini di jalankan jika kita memanggil onPause. \par
-\vspace{12pt}
-\noindent 
- $  \#  $ $  \#  $ $  \#  $4. onPause OnPause ini setelah onResume. Ketika onPause ini di jalankan activity sudah dalam keadaan hilang atau sudah tidak tampil di user interface. \par
-\vspace{12pt}
-\noindent 
- $  \#  $ $  \#  $ $  \#  $5. onStop OnStop ini di akses setelah on pause dan sebelum aktivity ini benar - benar di hapus dari memory. \par
-\vspace{12pt}
-\noindent 
- $  \#  $ $  \#  $ $  \#  $6. onDestroy OnDestroy adalah bagian terakhir ketika activity benar - benar di hapus dari memory. Ketika sebuah activity telah di destroy maka tidak bisa melakukan onResume atau onStart. \par
-\vspace{12pt}
-\noindent 
-SQLite Database \par
+Activity life cycle adalah sebuah siklus kehidupan activity. Sangat penting untuk memahami activity lifecyle ini untuk menghindari kebocoran memory. Dengan mengimplementasikan activity lifecyle ini kita bisa mengoptimalkan perfoma dari aplikasi yang kita buat. Setidaknya ada 6 siklus activity yang perlu kita pelajari, yaitu $  $onCreate, onStart, onResume onPause, onStop, dan onDestroy.
+\begin{enumerate}
+	\item onCreate OnCreate adalah state pada saat sebuah halaman atau activity pertama kali di buat atau di atach kedakam memory. OnCreate ini hanya di jalankan pada saat pertama kali di buat, jika sebuah acivity telah tersedia dalam backstact oncreate ini tidak di panggil lagi.
+	\item onStart OnStart adalah state setelah oncreate di jalankan. OnStart juga tetap di jalankan walaupun oncreate tidak di panggil dengan sarat sebuah activity telah tersimpan di dalam backstact memory. OnStart ini juga di jalankan jika masih berada dalam state onStop.
+	\item onResume OnResume di eksekusi setelah on start. OnResume ini di jalankan jika kita memanggil onPause.
+	\item onPause OnPause ini setelah onResume. Ketika onPause ini di jalankan activity sudah dalam keadaan hilang atau sudah tidak tampil di user interface.
+	\item onStop OnStop ini di akses setelah on pause dan sebelum aktivity ini benar - benar di hapus dari memory.
+	\item onDestroy OnDestroy adalah bagian terakhir ketika activity benar - benar di hapus dari memory. Ketika sebuah activity telah di destroy maka tidak bisa melakukan onResume atau onStart.
+\end{enumerate}
+   
+
+\section{SQLite Database}
 \vspace{12pt}
 \noindent 
 SQLite adalah salah satu portable database yang bisa kita gunakan untuk menyimpan data sesuai dengan kebutuhan aplikasi yang kita buat. Ada beberapa lite database yang bisa di gunakan dalam pembuatan aplikasi android. Namun SQLite database ini adalah yang ada secara default yang tersedia di android. Untuk SQLite ini juga menggunakan query yang cukup mirip - mirip dengan MYSQL. Jadi jika sudah terbiasa dengan MYSQL maka tidak akan kesulitan untuk memulai menggunakan SQLite ini. \par
@@ -36,9 +29,15 @@ Content Provider \par
 \vspace{12pt}
 \noindent 
 Content Provider adalah sebuah facilitas di android untuk kita gunakan untuk mengatur akses ke satu set terstruktur data. Dengan Content Provider memungkinkan kita untuk bisa share data dengan aplikasi lain. \par
-\vspace{12pt}
-\noindent 
- $  \#  $ $  \#  $ $  \#  $1. Determine URI's  $  \#  $ $  \#  $ $  \#  $2. Update Contract  $  \#  $ $  \#  $ $  \#  $4. Fill Out our URI matcher  $  \#  $ $  \#  $ $  \#  $5. Implemen Function \par
+\begin{enumerate}
+	\item Determine URI's
+	\item Update Contract
+	\item Fill Out our URI matcher
+	\item Implemen Function
+\end{enumerate}
+
+
+  
 \vspace{12pt}
 \vspace{12pt}
 \vspace{12pt}
@@ -63,11 +62,12 @@ git init $  $ \par
 Untuk membuat repo lokal baru pada perintah ini akan dibuat sebuah folder baru yang bernama  $ " $.git $ " $ \par
 \noindent 
 \vspace{\baselineskip}
-Contoh : $  $ $  \$  $ git init \par
-\vspace{12pt}
-\noindent 
-git status $  $ \par
-\noindent 
+\begin{verbatim}
+ $ git init
+\end{verbatim}
+\begin{verbatim}
+$ git status
+\end{verbatim}
 \vspace{\baselineskip}
 untuk melihat status dari repo local \par
 \noindent 
@@ -84,8 +84,9 @@ git add $  $ \par
 Untuk menambahkan file ke dalam repo yang sebelumnya sudah dibuat \par
 \noindent 
 \vspace{\baselineskip}
-Contoh : $  $ $  \$  $ git add myfile.txt \par
-\vspace{12pt}
+\begin{verbatim}
+$ git add myfile.txt
+\end{verbatim}
 \vspace{12pt}
 \noindent 
 git commit \par
@@ -94,8 +95,9 @@ git commit \par
 untuk menyimpan seluruh perubahan yang terjadi \par
 \noindent 
 \vspace{\baselineskip}
-Contoh : $  $ $  \$  $ git commit -m "first commit" \par
-\vspace{12pt}
+\begin{verbatim}
+$ git commit -m "first commit"
+\end{verbatim}\vspace{12pt}
 \noindent 
 git remote $  $ \par
 \noindent 
