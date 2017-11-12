@@ -1,11 +1,11 @@
 \section{Penjelasan}
 
-Salah satu fitur menarik di Git adalah\textit{stashing}.   Dengan 
+Salah satu fitur menarik di Git adalah \textit{stashing}.   Dengan 
 melakukan\textit{stashing}, developer dapat dengan mudah '\textit{
 melenyapkan}' perubahan kode program, melakukan perubahan lain, lalu 
 kembali lagi ke kode program yang sebelumnya dikerjakan.   
 Langkah-langkah tersebut sebenarnya dapat diwakili oleh beberapa 
-perintah Git lainnya, tapi\textit{stashing} membuatnya menjadi 
+perintah Git lainnya, tapi \textit{stashing} membuatnya menjadi 
 mudah karena hanya perlu memanggil satu perintah.\vspace{14pt}
 
 Sebagai contoh, saya akan menggunakan Git yang diakses melalui IntelliJ 
@@ -54,11 +54,12 @@ men-develop kode program yang berhubungan dengan kode program saya di
 atas.\vspace{14pt}
 
 Tentu saja saya juga tidak ingin ketinggalan sibuk.   Saya menambahkan 
-harga dan perhitungan laba pada kode program saya. saya menulis kode program berikut ini:\vspace{14pt}
-
-
-Map pembelian = [10: 10000, 20: 10100, 30: 10200, 40: 11000]\par
-Map penjualan = [5: 12000, 6: 13000, 3: 11000, 2: 11000, 1: 15000, 3: 12000]\par
+harga dan perhitungan laba pada kode program saya. saya menulis kode program berikut ini:
+\begin{equation}
+Map pembelian = [10: 10000, 20: 10100, 30: 10200, 40: 11000]
+\end{equation}
+\vspace{12pt}
+Map penjualan = [5: 12000, 6: 13000, 3: 11000, 2: 11000, 1: 15000, 3: 12000]
 println stokFifo(pembelian, 
 hitungTotal(pembelian.keySet().toList(),
 penjualan.keySet().toList()))\par 
@@ -326,7 +327,13 @@ kumngkinannya tidak dapat dilihat kembali.\vspace{14pt}
 
 
 \section{Sistem Kontrol Versi}
-\includegraphics[width=10cm,height=7cm]{Figures/stash.jpg}\par
+\ref{stash.jpg}:
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=10cm,height=7cm]{Figures/stash.jpg}}
+	\caption{Version Control System}
+	\label{stash.jpg}
+\end{figure}
+
 Version Control System (VCS) adalah perangkat lunak yang membantu 
 pengembang perangkat lunak untuk bekerja sama dan menjaga sejarah 
 lengkap dari pekerjaan mereka.
