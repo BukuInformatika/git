@@ -1,33 +1,43 @@
 
 \sloppy
 {\fontsize{18pt}{18pt}\selectfont Clone Opration \\} \par
+\begin{itemize}
+	\item Logo
+\end{itemize}
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=0.70\textwidth]{figures/logo}}
+	\caption{Logo}
+	\label{Logo}
+\end{figure}
+\section{Clone Opration}
 \vspace{14pt}
 \noindent 
 {\fontsize{16pt}{16pt}\selectfont cara install \\} \par
 \vspace{16pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Lakukan inisialisasi dengan mengetikkan perintah berikut pada Git Bash tadi \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git init \\} \par
+\begin{itemize}
+	\item git init
+\end{itemize}
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Perintah tersebut akan membuat sebuah repository lokal untuk proyek kita \\} \par
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Langkah berikutnya adalah memasukkan file-file source code serta folder pada proyek kedalam staging area, yaitu suatu kondisi dimana file serta folder source code dimasukkan ke dalam repository namun dalam keadaan temporary, belum disimpan. Untuk melakukannya gunakan perintah berikut. \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git add * \\} \par
+\begin{itemize}
+	\item git add *
+\end{itemize}
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Perintah tersebut akan memasukkan seluruh file dan folder yang ada pada folder ProyekPHP. Jika ingin memasukkan satu persatu cukup tuliskan nama file lengkap dengan ekstensinya atau nama folder jika hanya ingin menambahkan satu folder \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git add index.php \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git add nama $  \_  $folder \\} \par
+\begin{itemize}
+	\item git add index.php 
+\end{itemize}
+\begin{itemize}
+	\item git add nama folder 
+\end{itemize}
+
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Setelah itu kita siap untuk menyimpan source code kita kedalam repository. Ketikkan perintah berikut \\} \par
@@ -48,32 +58,34 @@
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Kembali ke Git Bash. Tambahkan remote repository yang barusan kita buat supaya proyek kita bisa diupload. Berikut perintahnya \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git remote add origin (link github yang di copy ssh nya) \\} \par
+\begin{itemize}
+	\item git remote add origin (link github yang di copy ssh nya)
+\end{itemize}
+
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Selanjutnya kita download terlebih dahulu file readme yang ada secara default ketika kita membuat repository di github dengan mengetikkan perintah \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git pull origin master \\} \par
+\begin{itemize}
+	\item git pull origin master
+\end{itemize}
+
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Maka file readme.md akan berada pada folder proyek kita \\} \par
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Terakhir adalah mengupload ke Github dengan perintah \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont git push origin master \\} \par
+\begin{itemize}
+	\item git push origin master
+\end{itemize}
+
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont masukkan username serta password jika diminta \\} \par
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Cek pada github maka file ktia sudah berada disana \\} \par
 \vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont Memantau berkas baru \\} \par
+\subsection {Memantau berkas baru}
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Untuk mulai memantau berkas baru, Anda menggunakan perintah $  $git add. Untuk mulai memantau berkas README tadi, Anda menjalankannya seperti berikut: \\} \par
@@ -205,8 +217,7 @@
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont  $  \#  $ \\} \par
 \vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont Mengabaikan berkas \\} \par
+\subsection {Mengabaikan berkas}
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Terkadang, Anda memiliki sekumpulan berkas yang Anda tidak ingin Git tambahkan secara otomatis atau bahkan terlihat sebagai tak-terpantau. Biasanya berkas hasil keluaran seperti berkas log atau berkas yang dihasilkan oleh sistem build Anda. Dalam kasus ini, Anda dapat membuat sebuah berkas bernama .gitignore yang berisi pola dari berkas terabaikan. Berikut adalah sebuah contoh isi dari berkas .gitignore: \\} \par
@@ -332,23 +343,18 @@
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Jika Anda ingin melihat apa yang telah Anda masukkan ke area stage yang nantinya akan masuk ke commit Anda berikutnya, Anda dapat menggunakan $  $git diff --cached. (Di Git versi 1.6.1 atau yang lebih tinggi, Anda dapat juga menggunakan $  $git diff --staged, yang mungkin lebih mudah untuk diingat). Perintah ini membandingkan area stage Anda dengan commit Anda terakhir: \\} \par
-\vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont  $  \$  $ git diff --cached \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont diff --git a/README b/README \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont new file mode 100644 \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont index 0000000..03902a1 \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont --- /dev/null \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont +++ b/README2 \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont @@ -0,0 +1,5 @@ \\} \par
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont +grit \\} \par
+\begin{verbatim}
+
+$ git diff --cached
+diff --git a/README b/README
+new file mode 100644
+index 0000000..03902a1
+--- /dev/null
++++ b/README2
+@@ -0,0 +1,5 @@
++grit
+
+\end{verbatim}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont + by Tom Preston-Werner, Chris Wanstrath \\} \par
 \noindent 
@@ -444,8 +450,7 @@
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont log.size \\} \par
 \vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont Comit perubahan atau yang telah di edit \\} \par
+\subsection {Comit perubahan atau yang telah di edit}
 \vspace{14pt}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Sekarang setelah area stage Anda tertata sebagaimana yang Anda inginkan, Anda dapat melakukan commit terhadap perubahan Anda. Ingat bahwa apapun yang masih di luar area stage - berkas apapun yang Anda telah buat atau ubah yang belum Anda jalankan $  $git add $  $terhadapnya sejak terakhir Anda edit - tidak akan masuk ke dalam commit ini. Perubahan tersebut akan tetap sebagai berkas terubah di cakram Anda. Dalam hal ini, saat terakhir Anda jalankan $  $git status, Anda telah melihat bahwa semuanya telah masuk ke stage, sehingga Anda siap untuk melakukan commit dari perubahan Anda. Cara termudah untuk melakukan commit adalah dengan mengetikkan $  $git commit: \\} \par
@@ -529,8 +534,7 @@
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Perhatikan bagaimana Anda tidak perlu menjalankan $  $git add $  $terhadap berkas benchmarks.rb dalam hal ini sebelum Anda commit. \\} \par
 \vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont Menghapus berkas \\} \par
+\subsection {Menghapus berkas}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Untuk menghapus sebuah berkas dari Git, Anda harus menghapusnya dari berkas terpantau (lebih tepatnya, mengpus dari area stage) dan kemudian commit. Perintah $  $git rm $  $melakukan hal tadi dan juga menghapus berkas tersebut dari direktori kerja Anda sehingga Anda tidak melihatnya sebagai berkas yang tak terpantau nantinya. \\} \par
 \noindent 
@@ -593,8 +597,7 @@
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Perintah ini akan membuang semua berkas yang berakhiran dengan $  $ $  \sim  $. \\} \par
 \vspace{14pt}
-\noindent 
-{\fontsize{14pt}{14pt}\selectfont Memindahkan berkas \\} \par
+\subsection {Memindahkan berkas}
 \noindent 
 {\fontsize{14pt}{14pt}\selectfont Tidak seperti kebanyakan sistem VCS lainnya, Git tidak secara eksplisit memantau perpindahan berkas. Jika Anda mengubag nama berkas di Git, tidak ada metada yang tersimpan di Git yang menyatakan bahwa Anda mengubah nama berkas tersebut. Namun demikian, Git cukup cerdas untuk menemukannya berdasarkan fakta yang ada - kita akan membicarakan tentang mendeteksi perpindahan berkas sebentar lagi. \\} \par
 \noindent 
