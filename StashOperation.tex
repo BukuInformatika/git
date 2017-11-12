@@ -1,3 +1,4 @@
+\section{Penjelasan}
 
 Salah satu fitur menarik di Git adalah\textit{stashing}.   Dengan 
 melakukan\textit{stashing}, developer dapat dengan mudah '\textit{
@@ -143,7 +144,7 @@ file yang berbeda.  Tanpa Git dan\textit{stashing}, pada kasus ini,
 saya harus memakai cara manual yang lebih repot seperti memberikan 
 komentar atau mengedit file untuk sementara.\vspace{14pt}
 
-\textbf{Membatalkan Apapun}\vspace{14pt}
+\subsection{Membatalkan Apapun}
 
 Pada setiap tahapan, Anda mungkin ingin membatalkan sesuatu. Di sini, 
 kita akan membahas beberapa alat dasar untuk membatalkan perubahan yang 
@@ -177,11 +178,14 @@ untuk memasukkan beberapa perubahan dalam sebuah berkas ke area stage
 dan Anda ingin untuk menambahkan perubahan ini ke dalam commit terakhir, 
 Anda dapat melakukannya sebagai berikut:\vspace{14pt}
 
+\begin{verbatim}
+
 \$ git commit -m 'initial commit'\vspace{14pt}
 
 \$ git add forgotten\_file\vspace{14pt}
 
 \$ git commit --amend\vspace{14pt}
+\end{verbatim}
 
 Ketiga perintah ini tetap akan bekerja di satu commit - commit kedua 
 akan menggantikan hasil dari commit pertama.\vspace{14pt}
@@ -322,17 +326,26 @@ kumngkinannya tidak dapat dilihat kembali.\vspace{14pt}
 
 
 \section{Sistem Kontrol Versi}
+\includegraphics[width=10cm,height=7cm]{Figures/stash.jpg}\par
 Version Control System (VCS) adalah perangkat lunak yang membantu 
 pengembang perangkat lunak untuk bekerja sama dan menjaga sejarah 
-lengkap dari pekerjaan mereka.\vspace{14pt}
+lengkap dari pekerjaan mereka.
 
-Di bawah ini adalah fungsi dari VCS a:
+\begin{table}[ht]
+	\caption{Fungsi VCS}
+	\centering
+	\begin{tabular}{cccc}
+		\hline
+		No&Keterangan&\\
+		\hline
+		.1&Memungkinkan pengembang untuk bekerja secara bersamaan&\\
+		.2&Tidak memungkinkan Timpa perubahan masing-masing&\\
+		.3&Mempertahankan sejarah setiap versi&\\
+		\hline
+	\end{tabular}
+\end{table}
 
-\begin{itemize}
-\item Memungkinkan pengembang untuk bekerja secara bersamaan.
-\item Tidak memungkinkan Timpa perubahan masing-masing.
-\item Mempertahankan sejarah setiap versi.
-\end{itemize}
+
 Berikut ini adalah jenis VCS:
 
 \begin{itemize}
