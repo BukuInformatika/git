@@ -1,3 +1,9 @@
+\ref{git.jpg}:
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=10cm,height=7cm]{Figures/git.jpg}}
+	\caption{learn git}
+	\label{git.jpg}
+\end{figure}
 
 Git adalah version control system yang digunakan para developer untuk 
 mengembangkan software secara bersama-bersama. Fungsi utama git yaitu 
@@ -47,9 +53,8 @@ perangkat lunak sangat dekat dengan sistem kontrol versi, baik secara
 manual maupun menggunakan perangkat lunak khusus. Seri tulisan ini akan 
 membahas tentang sistem kontrol versi, kegunaannya, serta contoh kasus 
 menggunakan git, salah satu perangkat lunak populer untuk kontrol versi.
-\vspace{12pt}
 
-\textbf{Dasar Kontrol Versi}
+\section{Dasar Kontrol Versi}
 
 Kegunaan utama dari sistem kontrol versi ialah sebagai alat untuk 
 manajemen kode program. Terdapat dua kegunaan utama dari sistem ini, 
@@ -77,7 +82,7 @@ pada kernel Linux).
 \vspace{12pt}
 
 
-\textbf{Git}
+\subsection{Git}
 
 Git adalah sebuah perangkat lunak untuk mengontrol versi sebuah 
 perangkat lunak "VCS/Version Control System". Git diciptakan oleh Linux 
@@ -100,6 +105,8 @@ dipasang maupun yang tidak terpasang), menyimpannya untuk penggunaan
 selanjutnya, lalu mengembalikannya dari salinan pekerjaan Anda. Sebagai 
 contoh:
 \vspace{12pt}
+\begin{verbatim}
+
 \$ git status
 
 On branch master
@@ -124,6 +131,7 @@ HEAD is now at 5002d47 our new homepage
 On branch master
 
 nothing to commit, working tree clean
+\end{verbatim}
 
 Pada poin ini Anda bebas melakukan perubahan, membuat commit baru, 
 mengganti cabang, dan melakukan operasi Git lainnya; Kemudian kembali 
@@ -138,6 +146,8 @@ Git Anda.
 perubahan dengan git stash pop:
 \setcounter{numberedCntD}{\theenumi}
 \end{enumerate}
+
+\begin{verbatim}
 \$ git status
 
 On branch master
@@ -157,6 +167,7 @@ Changes not staged for commit:
 modified: index.html
 
 Dropped refs/stash@\{0\} (32b3aa1d185dfe6d57b3c3cc3b32cbf3e380cc6a)
+\end{verbatim}
 
 Memindahkan simpanan Anda akan menghilangkan perubahan dari simpanan 
 Anda dan memasangnya kembali ke salinan pekerjaan Anda.
@@ -167,6 +178,7 @@ Sebagai alternatif, Anda dapat mengajukan permohonan kembali perubahan
 pada copy pekerjaan Anda dan menyimpannya di tempat penyimpanan dengan 
 git stash berlaku:
 
+\begin{verbatim}
 \$ git stash apply
 
 On branch master
@@ -178,6 +190,9 @@ new file: style.css
 Changes not staged for commit:
 
 modified: index.html
+
+\end{verbatim}
+
 
 Ini berguna jika Anda ingin menerapkan perubahan tersimpan yang sama ke 
 beberapa cabang.
@@ -211,6 +226,7 @@ Jadi jika kita menambahkan file ketiga ke contoh kita di atas, tapi
 jangan tingkatkan (misal kita tidak menjalankan git add), git stash 
 tidak akan menyimpannya.\vspace{12pt} 
 
+\begin{verbatim}
 \$ script.js
 
 \$ git status
@@ -243,6 +259,8 @@ On branch master
 Untracked files:
 
 script.js
+
+\end{verbatim}
 
 Menambahkan opsi -u (atau --include-unracked) memberitahu git stash 
 untuk juga menyimpan file yang tidak terlacak.\vspace{12pt}
@@ -373,18 +391,22 @@ direktori Git anda, yang menyimpan informasi mengenai apa yang menjadi
 commit selanjutnya. Ini terkadang disebut sebagai index, tetapi semakin 
 menjadi standard untuk menyebutnya sebagai staging area.\vspace{12pt}
 
-Alur kerja dasar Git adalah seperti ini:
+\begin{table}[ht]
+	\caption{Alur kerja dasar git}
+	\centering
+	\begin{tabular}{cccc}
+		\hline
+		No&Keterangan&\\
+		\hline
+		.1&Mengubah berkas dalam direktori kerja&\\
+		.2&Menambahkan snapshotnya ke staging 
+		area&\\
+		.3&Commit,Ambil berkas di 
+		staging area dan menyimpan snapshotnya ke direktori Git&\\
+		\hline
+	\end{tabular}
+\end{table}
 
-\newcounter{numberedCntF}
-\begin{enumerate}
-\item Anda mengubah berkas dalam direktori kerja anda.
-\item Anda membawa berkas ke stage, menambahkan snapshotnya ke staging 
-area.
-\item Anda melakukan commit, yang mengambil berkas seperti yang ada di 
-staging area dan menyimpan snapshotnya secara permanen ke direktori Git 
-anda.
-\setcounter{numberedCntF}{\theenumi}
-\end{enumerate}
 Jika sebuah versi tertentu dari sebuah berkas telah ada di direktori 
 git, ia dianggap 'committed'. Jika berkas diubah (modified) tetapi sudah 
 ditambahkan ke staging area, maka itu adalah 'staged'. Dan jika berkas 
@@ -454,8 +476,9 @@ Perintah di atas akan menghasilkan hasil sebagai berikut:\vspace{12pt}
 diff --git a/string.c b/string.c
 
 index 7da2992..32489eb 100644
-
+\begin{equation}
 --- a/string.c
+\end{equation}
 
 +++ b/string.c
 
@@ -519,6 +542,8 @@ Initial commit\vspace{12pt}
 
 Tom menggunakan git push untuk melakukan push atas perubahan yang dilakukannya.\par
 \vspace{12pt}
+
+
 [$tom@CentOS project ~$] git push origin master\par
 \vspace{12pt}
 perintah diatas akan menghasilkan seperti berikut:\par
