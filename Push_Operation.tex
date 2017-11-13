@@ -1,6 +1,23 @@
 
 \sloppy
 \begin{center}{\fontsize{16pt}{16pt}\selectfont Push Operation \\}\end{center} \par
+
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=0.60\textwidth]{Figures/dapgit3.jpg}}
+	\caption{Push Operation}
+	\label{Push Operation}
+\end{figure}
+
+
+
+
+
+\section {Pengertian }
+\subsection {Push Operation}
+
+
+
 Bekerja dalam satu proyek secara bersama-sama sudah menjadi hal yang lumrah sekarang ini. Termasuk juga proyek-proyek dalam dunia komputer yang sebagian besar menuliskan kode untuk menciptakan software, sistem informasi, aplikasi, atau apa pun namanya. Salah satu sistem yang banyak dipakai untuk membantu pengerjaan proyek bersama tersebut adalah Source Control Management (SCM) atau disebut juga dengan Version Control System (VCS). Ada banyak contoh produk-produk yang tergolong ke dalam jenis VCS, salah satunya adalah Git. Git adalah VCS yang dibangun oleh Linus Torvalds, dikenal juga sebagai pencipta sistem operasi linux, untuk membantu pengembangan kernel linux. Sebelum menggunakan git, pengembangan kernel linux menggunakan produk VCS bernama BitKeeper. Ketika BitKeeper telah menjadi software yang berbayar dan tidak menjadi produk opensource lagi, maka Linus menciptakan Git sebagai pengganti dalam pengembangan kernel linux. \par
 Git adalah VCS yang banyak digunakan saat ini. Banyak pengerjaan proyek bersama menggunakan bantuan Git untuk mengelola artefak proyek. Github, salah satu layanan VCS berbasis Git dengan web-based interface, telah menjadi tempat dikembangkannya proyek-proyek open source diseluruh dunia. Tidak hanya untuk proyek opensource, Github juga dapat digunakan untuk mengerjakan proyek non-opensource. \par
 \noindent 
@@ -19,18 +36,31 @@ Git Memiliki Integritas, Segala sesuatu pada Git akan diberi tanda khusus \texti
 Konsep Tiga Status, $  $Git memiliki 3 status utama dalam melakukan pencatatan terhadap artefak proyek. Konsep 3 status ini adalah kunci utama dalam memahami penggunaan Git secara baik dan benar. Jadi pastikan developer paham dengan konsep 3 status pada Git sebelum menggunakannya. Jika dirasa perlu maka dapat dikumpulkan informasi yang lebih banyak tentang konsep ini untuk mempermudah penggunaan Git kedepannya. File pada Git memiliki salah satu dari 3 status berikut: \textit{commited, modified,} dan \textit{staged. Commited $  $}artinya perubahan terhadap file telah disimpan ke dalam database Git. \textit{Modified} artinya telah terjadi perubahan pada file dan perubahan sama sekali belum disimpan oleh Git. \textit{Staged} artinya perubahan pada file telah tersimpan ke dalam penyimpanan sementara dan siap untuk disimpan ke dalam database. Konsep 3 status menyebabkan proyek pada Git terbagi atas 3 bagian utama yaitu: database Git (\textit{Git directory or Git database or Git Repository}), area kerja (\textit{working directory}), dan area perantara (\textit{staging area})  \par
 \noindent 
 Database git adalah tempat dimana Git menyimpan seluruh informasi tambahan dan perubahan-perubahan untuk setiap versi artefak proyek. Ini adalah bagian yang sangat penting dari Git dan bagian ini adalah bagian yang akan disalin dalam proses \textit{cloning repository $  $}dari satu mesin ke mesin yang lain. Area kerja adalah folder induk yang mengandung seluruh artefak proyek (file-file) yang sedang dikerjakan. Area perantara adalah tempat menyimpan informasi perubahan terhadap artefak proyek yang siap untuk disimpan ke dalam database Git. Bentuk nyatanya adalah sebuah file yang terletak di dalam direktori Git. Area perantara terkadang disebut juga sebagai index.\vspace{\baselineskip}
-Alur kerja Git yang paling umum adalah sebagai berikut \par
-Developer melakukan perubahan terhadap file yang berada pada area kerja \par
-Developer menyimpan perubahan ke dalam area perantara untuk proses pengambil \textit{snapshot} \par
-Developer menyimpan perubahan secara permanen ke dalam database Git \par
+\section{Alur kerja Git yang paling umum adalah sebagai berikut} \par
+
+
+\begin{enumerate}
+
+
+\item Developer melakukan perubahan terhadap file yang berada pada area kerja \par
+\item Developer menyimpan perubahan ke dalam area perantara untuk proses pengambil \textit{snapshot} \par
+\item Developer menyimpan perubahan secara permanen ke dalam database Git \par
 \vspace{12pt}
 \vspace{12pt}
 \noindent 
+\end {enumerate}
+
+
+\includegraphics[width=10cm,height=7cm]{Figures/dapgit4.jpg}
+\begin{equation}Alur Git \end{equation}
+
+\subsection{Pengertian Lanjutan}
+
 Mungkin sudah terlalu sering kita bekerja mandiri pada project pribadi, disini saya akan menunjukkan bagaimana caranya berkontribusi di project lain. Hal termudah untuk mencapai itu kita cari proyek open sources, apa itu proyek opensources, Proyek perangkat lunak open source merupakan proyek yang memberikan kode program kepada penggunanya secara bebas, dan tak jarang pengembangannya dilakukan secara terbuka: siapapun boleh berkontribusi dalam menulis kode tersebut. Menggunakan perangkat lunak open source tentunya sangat baik, karena selain tidak melakukan pembajakan, kita juga mendukung para pengembang dari perangkat lunak yang kita gunakan. Tetapi, akan lebih baik lagi jika kita juga ikut berkontribusi, mulai dari kontribusi pengunaan, pelaporan bug, sampai dengan kontribusi kode. Kontribusi pada proyek open source akan membantu kita untuk meningkatkan kemampuan pengembangan perangkat lunak.". \par
 \vspace{12pt}
 \vspace{12pt}
 \noindent 
-\textbf{Welcome Contributors} \par
+\section{Welcome Contributors} \par
 Fork it! \par
 Create your feature branch: git checkout -b my-new-feature \par
 Commit your changes: git commit -am 'Add some feature' \par
@@ -41,7 +71,7 @@ Tahapan berkontribusi yang baik, \par
 \noindent 
 Cari proyek opensources. \textit{(disini saya sebagai pengembang android saya akan memberikan contoh cara berkontribusi di salah satu proyek opensources pada library android)} \par
 \noindent 
-\textbf{Material Tabs} \par
+\section{Material Tabs} \par
 \noindent 
 Coba cari cari info tentang aturan kontribusi atau bisa dengan cara melakukan pendekatan pada developer terkait baik via email atau sosial akun. \par
 \noindent 
@@ -161,20 +191,27 @@ kemudian klik "create repository". \par
 \noindent 
 Jika repository berhasil dibuat, anda akan di berikan kunci akases berupa HTTP/SSH, ini yang akan kita gunakan untuk remote repository dari software GIT. Misal saya punya kunci HTTP http://github.com/acchoblues/APeK.git \par
 \noindent 
-Setelah anda berhasil membiat repository sekarang klik kanan pada folder project yang akan di upload. \par
+\begin{enumerate}
+\item Setelah anda berhasil membiat repository sekarang klik kanan pada folder project yang akan di upload. \par
 \noindent 
-Klik kanan pada project klik "Git Bash". \par
+\item Klik kanan pada project klik "Git Bash". \par
 \noindent 
-Kemudian akan muncul command prompt / CMD \par
+\item Kemudian akan muncul command prompt / CMD \par
 \noindent 
-Jika anda baru pertama kali meggunakan software GIT, sebaiknya konfigurasi username dan email dulu. \par
+\item Jika anda baru pertama kali meggunakan software GIT, sebaiknya konfigurasi username dan email dulu. \par
 \noindent 
+\end {enumerate}
 Ketik \par
 \noindent 
+
+\begin{verbatim}
 Git config --global user.name "username anda"  \par
 \noindent 
-Git config --global user.email isi $  \_  $dengan $  \_  $email $  \_  $anda@ymail.com  \par
+Git config --global user.email isi $ 
+ \_  $dengan $  \_  $email $ 
+  \_  $anda@ymail.com  \par
 \noindent 
+\end{verbatim}
 Setelah melakukan konfigurasi username dan email, sekarang kita lakukan inisiasi, ketikan  \par
 \noindent 
 Git init  \par
@@ -206,11 +243,15 @@ So jangan khawatir tunggu sampai selesai di upload projectnya. \par
 kalau sudah selesai proses uploadnya silahkan refresh repository anda, insya allah jika sesuai dengan instruksi di atas maka project anda sudah terupload disana. \par
 \vspace{12pt}
 \vspace{12pt}
-\noindent 
+
+ 
+\begin{verbatim}
+
  $  \$  $ \textbf{git init --bare proyekKhadapi} \par
-\noindent 
+
 Initialized empty Git repository in F:/proyekkhadpi/ \par
-\noindent 
+
+\end{verbatim}
 Perintah di atas akan membuat sebuah \textit{bare repository} yang hanya dipakai untuk melakukan sinkronisasi antara pekerjaan Edi dan Bram nantinya. \par
 \vspace{12pt}
 \noindent 
@@ -231,14 +272,18 @@ Bram kemudian meminjam flash disk berisi \textit{bare repository} tersebut, dan 
 \noindent 
 Kedua developer tersebut kemudian bekerja di komputer masing-masing. $  $ $  $ Sebagai contoh, ini adalah simulasi pekerjaan yang dilakukan oleh Edi di repository miliknya: \par
 \noindent 
- $  \$  $ \textbf{echo 'Menu 1' >> menu.txt} \par
-\noindent 
- $  \$  $ \textbf{echo 'Isi modul 1' >> modul1.txt} \par
-\noindent 
- $  \$  $ \textbf{git add .} \par
-\noindent 
- $  \$  $ \textbf{git commit -m 'Membuat modul 1'} \par
-\noindent 
+\begin{verbatim}
+
+
+{echo 'Menu 1' >> menu.txt} \par
+ 
+{echo 'Isi modul 1' >> modul1.txt} \par
+
+{git add .} \par
+
+{git commit -m 'Membuat modul 1'} \par
+
+\end{verbatim}
 Edi membuat dua file dengan nama \textit{menu.txt} dan \textit{modul1.txt}. $  $ $  $ Anggap saja ini adalah kode program  \par
 \noindent 
 Pada saat yang bersamaan, Bram juga menambahkan file pada repository miliknya: \par
