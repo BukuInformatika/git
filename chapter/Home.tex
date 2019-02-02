@@ -1,10 +1,40 @@
 \section{Latihan}
-Bisa karena biasa, rumit karena tak di cicil. Maka pemakaian git adalah maslaha kebiasaan. Oleh karena itu, dalam pembukaan awal buku ini justru kita tidak dulu masuk kepada teori git tapi langsung praktek. setelah berkali-kali praktek maka akan timbul beberapa pertanyaan mengenai fungsi dari perintah-perintah git yang bisa di baca pada bagian selanjutnya.
+Bisa karena biasa, rumit karena tak dicicil. Maka pemakaian git adalah masalah kebiasaan. Oleh karena itu, dalam pembukaan awal buku ini justru kita tidak dulu masuk kepada teori git tapi langsung praktek. setelah berkali-kali praktek maka akan timbul beberapa pertanyaan mengenai fungsi dari perintah-perintah git yang bisa dibaca pada bagian selanjutnya.
 
-Skenarionya adalah, kita akan melakukan kontribusi terhadap sebuah repo Open Source di GitHub. Jadi latihan ini adalah latihan bagaimana ikut berkontribusi kepada repo Open Source yang ada di Github yang selama ini digunakan oleh para relawan kode untuk bersama membangun kode program berbasis Open Source.
+Skenarionya adalah kita akan melakukan kontribusi terhadap sebuah repo \textit{Open Source} di GitHub. Jadi latihan ini adalah latihan bagaimana ikut berkontribusi kepada repo \textit{Open Source} yang ada di Github yang selama ini digunakan oleh para relawan kode untuk bersama membangun kode program berbasis \textit{Open Source}.
 \subsection{Konfigurasi Key}
-Pertama kita masuk kepada tahapan seting atau konfigurasi key untuk mengakses semua repo dari profile kita dari git bash:
+Pertama kita masuk kepada tahapan \textit{setting} atau konfigurasi \textit{key} untuk mengakses semua repo dari \textit{profile} kita dari \textit{git bash}:
 \begin{enumerate}
+
+\item Buat akun di \href{https://www.github.com}{\textbf{GitHub}} terlebih dahulu
+\item \textit{Install \href{https://git-scm.com/downloads}{\textbf{Git Bash}}} di komputer Anda, kemudian buka \textit{git bash}.
+\item Pastikan sudah ada di \textit{home directory} dengan mengetikkan perintah \verb|cd| kemudian \textit{enter}. Untuk mengetahui posisi Anda ada di direktori mana ketikkan perintah \verb|pwd| dan \textit{enter}.
+\item \textbf{\textit{Generate Key}} dengan perintah 
+\verb|ssh-keygen -t rsa -b 4096 -C "\textit{your_email@example.com}"|
+seperti pada gambar \ref{luaran1}.
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=75\textwidth]{Figures/langkah2.PNG}}
+\caption{Hasil Luaran 2}
+\label{luaran2}
+\end{figure}
+\item Baca \textit{key} yang sudah di \textit{generate} dengan menggunakan perintah 
+\verb|cat .ssh/id_rsa.pub| seperti pada gambar \ref{luaran2}.
+\item Hasil luaran yang dibaca sebelumnya merupakan \textit{key} kita. Kemudian masukkan \textit{key} dengan masuk ke menu \textbf{\textit{Setting}} yang ada dipojok kanan atas, seperti pada gambar \ref{setting}. Lalu pada menu \textit{\textbf{SSH and GPG Keys}} tambahkan \textit{\textbf{New SSH key}} seperti pada gambar \ref{sshkeys}.
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=75\textwidth]{Figures/setting.PNG}}
+\caption{Setting}
+\label{setting}
+\end{figure}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=75\textwidth]{Figures/sshkeys.PNG}}
+\caption{New SSH key}
+\label{sshkeys}
+\end{figure}
+\end{enumerate}
+
+\subsection{Fork Repositori}
+Pertama kita cari repositori utama yang akan kita ikut berkontribusi kepada repositori tersebut. Jika sudah ketemu, kemudian klik Fork(Tombol kanan atas) yang dilanjutkan dengan memilih akun kita sebagai tujuan clone fork tersebut. Setelah selesai maka kita akan memiliki repo yang sama dengan repo yang Anda fork. Contoh apabila Anda melakukan Fork dari https://github.com/RepoAsal/Testing maka Anda akan memiliki repo https://github.com/usernameAnda/Testing, dan kita akan bekerja pada repo hasil fork ini. 
+=======
 \item Buat Akun di Github.com Terlebih dahulu
 \item install git bash di komputer anda, kemudian buka git bash.
 \item Pastikan sudah ada di home direktori dengan mengetikkan perintah cd kemudian enter. Uktuk mengetahui posisi anda ada di direktori mana ketikkan perintah pwd dan enter.
@@ -18,14 +48,15 @@ Pertama kita masuk kepada tahapan seting atau konfigurasi key untuk mengakses se
 \subsection{Fork Repositori}
 Pertama kita cari repositori utama yang akan kita ikut berkontribusi kepada repositori tersebut. Jika sudah ketemu, kemudian klik Fork(Tombol kanan atas) yang dilanjutkan dengan memilih akun kita sebagai tujuan clone fork tersebut. Setelah selesai maka kita akan memiliki repo yang sama dengan repo yang anda fork. Contoh apabila anda melakukan Fork dari https://github.com/RepoAsal/Testing maka anda akan memiliki repo https://github.com/usernameAnda/Testing, dan kita akan bekerja pada repo hasil fork ini.
 
+
 \subsection{Navigasi direktori dengan Git Bash}
-Pertama kita tentukan terlebih dahulu folder tempat kita mengerjakan repo hasil fork kita. Misal di Drive D: folder Ganteng. Maka buka git bash kita dan arahkan menuju folder tersebut dengan perintah \verb|cd /D/Ganteng| lalu buka web repo fork kita di github klik tombol hijau CLone or Download pilih Clone with SSH lalu salin kode yang tampak seperti git@github.com:usernameAnda/Testing.git. Pada Git Bash ketik git clone git@github.com:usernameAnda/Testing.git . Setelah selesai, ketik perintah ls maka akan muncul direktori baru yaitu folder Testing atau sesuai dengan nama repo anda. masuk ke direktori tersebut dengan perintah cd Testing. Kemudian ketik git status akan muncul status dari repo git kita.
+Pertama kita tentukan terlebih dahulu folder tempat kita mengerjakan repo hasil fork kita. Misal di Drive D: folder Ganteng. Maka buka git bash kita dan arahkan menuju folder tersebut dengan perintah \verb|cd /D/Ganteng| lalu buka web repo fork kita di github klik tombol hijau CLone or Download pilih Clone with SSH lalu salin kode yang tampak seperti git@github.com:usernameAnda/Testing.git. Pada Git Bash ketik git clone git@github.com:usernameAnda/Testing.git . Setelah selesai, ketik perintah ls maka akan muncul direktori baru yaitu folder Testing atau sesuai dengan nama repo Anda. masuk ke direktori tersebut dengan perintah cd Testing. Kemudian ketik git status akan muncul status dari repo git kita.
 
 \subsection{Sinkronisasi dengan Repo Utama}
 Karena ini repo hasil Fork maka kita harus selalu di sinkronisasi dari repo aslinya(tidak otomatis tersingkron). Sehingga perlu melakukan setting sumber repo tujuan yang merupakan repo asal. Pertama pastikan git bash sudah pada direktori repositori. Untuk melakukan sinkronisasi dengan repo asal kita harus mengeset satu kali dengan perintah :
 \verb|git remote add upstream https://github.com/RepoAsal/Testing.git|
 
-Setelah melakukan setting sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan dua perintah berikut :
+Setelah melakukan \textit{setting} sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan dua perintah berikut :
 \begin{verbatim}
 git fetch upstream
 git pull upstream master
@@ -33,8 +64,23 @@ git pull upstream master
 
 
 \subsection{Bekerja dengan Git Bash}
-Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada file. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita fork repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
+Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada \textit{file}. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita \textit{fork} repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
 \begin{enumerate}
+\item \verb|git fetch upstream|
+\item \verb|git pull upstream master|
+\item \verb|git push origin master|
+\item Silahkan edit satu file yang akan di ubah atau ditambah lalu di simpan dan di tutup
+\item \verb|git status|
+\item \verb|git add| namafilenya.tex
+\item \verb|git status|
+\item \verb|git commit -m| `perubahan apa yang telah kita lakukan di ceritakan di sini secara lengkap'
+\item \verb|git status|
+\item \verb|git push origin master|
+\item Buka web repo kita di github.com
+Contoh disini \textbf{https://github.com/usernameAnda/Testing} kemudian klik New pull request. Pastikan yang sebelah kiri atau base kita set kepada repo utama tempat fork kita yaitu RepoAsal/Testing dan compare pada sebelah kanan adalah repo kita, disini dicontohkan usernameAnda/Testing. Klik tombol hijau `Create Pull Request'. Share. Dan klik kembali tombol hijau lagi.
+\item Beritahukan admin repo utama untuk accept Pull Request Anda. Jika sudah di accept lakukan lagi langkah dari awal.
+\end{enumerate}
+=======
 \item git fetch upstream
 \item git pull upstream master
 \item git push origin master
