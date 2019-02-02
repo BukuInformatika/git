@@ -495,7 +495,7 @@ This version is dated \currversion^^J^^J}
 {\frenchspacing\baselineskip=12pt
 \authorfont \theauthor\vskip1sp}
 \vfill
-\noindent{\includegraphics[width=1.7in]{figures/kreatiflogo}}
+\noindent{\includegraphics[width=1.7in]{Figures/kreatiflogo}}
 \vskip-8pt
 {\wileyfont Kreatif Industri Nusantara}
 \vskip24pt}\newpage}
