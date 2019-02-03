@@ -73,13 +73,14 @@ Setelah melakukan \textit{setting} sekali di awal, kemudian selanjutnya kita tin
 \begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
 git fetch upstream
 git pull upstream master
+git push origin master
 \end{lstlisting}
 
 
 \subsection{Bekerja dengan Git Bash}
 Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada \textit{file}. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita \textit{fork} repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
 \begin{enumerate}
-\item Sinkronisasi dengan repo asli tempat kita awal melakukan klik tombol fork dengan perintah :
+\item Sebelum mulai mengerjakan, sinkronisasi kembali dengan repo asli lagi agar terhindar dari konflik dengan perintah :
 \begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
 git fetch upstream
 git pull upstream master
@@ -113,12 +114,14 @@ Setting global ini hanya sekali saja ketika baru melakukan instalasi git bash, s
 \item Kemudian file yang sudah kita ubah kita upload ke website github.com dengan perintah \textit{git push origin master}.
 \item Buka web repo kita di website www.github.com
 Contoh disini\\
- \textbf{https://github.com/usernameAnda/Testing} \\kemudian klik \textbf{New pull request}. Pastikan yang sebelah kiri atau base kita set kepada repo utama tempat fork kita yaitu RepoAsal/Testing dan compare pada sebelah kanan adalah repo kita, disini dicontohkan usernameAnda/Testing dan ilustrasi bisa dilihat di gambar \ref{pullrequest}. Klik tombol hijau `Create Pull Request'. Share. Dan klik kembali tombol hijau lagi.
-\item Beritahukan admin repo utama untuk accept Pull Request Anda. Jika sudah di accept lakukan lagi langkah dari awal.
-\end{enumerate}
-
+ \textbf{https://github.com/usernameAnda/Testing} \\kemudian klik \textbf{New pull request}. Pastikan yang sebelah kiri atau base kita set kepada repo utama tempat fork kita yaitu RepoAsal/Testing dan compare pada sebelah kanan adalah repo kita, disini dicontohkan usernameAnda/Testing dan ilustrasi bisa dilihat di gambar \ref{pullrequest}. Klik tombol hijau \textit{Create Pull Request} kemudian teruskan sampai ada kembali tombol hijau yang kita klik lagi.
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/pullrequest}}
 \caption{Setelah klik New pull request}
 \label{pullrequest}
 \end{figure}
+
+\item Beritahukan admin repo utama untuk accept Pull Request Anda. Jika sudah di accept lakukan lagi langkah dari awal.
+\end{enumerate}
+
+
