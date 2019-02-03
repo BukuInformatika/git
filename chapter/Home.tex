@@ -35,7 +35,7 @@ Hasilnya seperti yang terlihat pada gambar \ref{luaran1}.
 \label{setting}
 \end{figure}
 \begin{figure}[!htbp]
-\centerline{\includegraphics[width=.75\textwidth]{Figures/sshkeys.PNG}}
+\centerline{\includegraphics[width=.75\textwidth]{Figures/sshkeys}}
 \caption{New SSH key}
 \label{sshkeys}
 \end{figure}
@@ -48,8 +48,18 @@ Pertama kita cari repositori utama yang akan kita ikut berkontribusi kepada repo
 
 \subsection{Navigasi direktori dengan Git Bash}
 Pertama kita tentukan terlebih dahulu folder tempat kita mengerjakan repo hasil fork kita. Misal di Drive D: folder Ganteng. Maka buka git bash kita dan arahkan menuju folder tersebut dengan perintah 
-\verb|cd /D/Ganteng| 
-lalu buka web repo fork kita di github klik tombol hijau \textbf{CLone or Download} pilih Clone with SSH lalu salin kode yang tampak seperti \textit{git@github.com:usernameAnda/Testing.git}. Pada Git Bash ketik \textit{git clone git@github.com:usernameAnda/Testing.git} . Setelah selesai, ketik perintah \textit{ls} maka akan muncul direktori baru yaitu folder Testing atau sesuai dengan nama repo Anda. masuk ke direktori tersebut dengan perintah \textit{cd Testing}. Kemudian ketik \textit{git status} akan muncul status dari repo git kita.
+\verb|cd /D/Ganteng|.
+Buka web repo fork kita di github klik tombol hijau \textbf{Clone or Download} pilih Clone with SSH lalu salin kode yang tampak seperti \textit{git@github.com:usernameAnda/Testing.git}. Pada Git Bash ketik \textit{git clone git@github.com:usernameAnda/Testing.git} hasilnya seperti terlihat pada gambar \ref{gitclone}. Setelah selesai, ketik perintah \textit{ls} maka akan muncul direktori baru yaitu folder Testing atau sesuai dengan nama repo Anda. masuk ke direktori tersebut dengan perintah \textit{cd Testing}. Kemudian ketik \textit{git status} akan muncul status dari repo git kita, sebagai contoh lihat hasilnya pada gambar \ref{lscdstatus}.
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/gitclone}}
+\caption{Hasil Perintah git clone}
+\label{gitclone}
+\end{figure}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/lscdstatus}}
+\caption{Hasil Perintah ls, cd dan git status}
+\label{lscdstatus}
+\end{figure}
 
 \subsection{Sinkronisasi dengan Repo Utama}
 Karena ini repo hasil Fork maka kita harus selalu di sinkronisasi dari repo aslinya(tidak otomatis tersingkron). Sehingga perlu melakukan setting sumber repo tujuan yang merupakan repo asal. Pertama pastikan git bash sudah pada direktori repositori. Untuk melakukan sinkronisasi dengan repo asal kita harus mengeset satu kali dengan perintah :
@@ -69,9 +79,12 @@ git pull upstream master
 \subsection{Bekerja dengan Git Bash}
 Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada \textit{file}. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita \textit{fork} repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
 \begin{enumerate}
-\item \verb|git fetch upstream|
-\item \verb|git pull upstream master|
-\item \verb|git push origin master|
+\item Sinkronisasi dengan repo asli tempat kita awal melakukan klik tombol fork dengan perintah :
+\begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+git fetch upstream
+git pull upstream master
+git push origin master
+\end{lstlisting}
 \item Silahkan edit satu file yang akan di ubah atau ditambah lalu di simpan dan di tutup yang berada di direktori yang sudah disetting di navigasi direktori. Seperti terlihat pada gambar \ref{penanda}.
     \begin{figure}[!htbp]
         \centering
@@ -79,15 +92,33 @@ Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan 
             \caption{Direktori}
         \label{penanda}
     \end{figure}
-\item \verb|git status|
-\item untuk memasukkan file yang sudah diubah/diedit yaitu dengan perintah 
-		\verb|git add| namafilenya.tex
-\item \verb|git status|
-\item \verb|git commit -m| `perubahan apa yang telah kita lakukan di ceritakan di sini secara lengkap'
-\item \verb|git status|
-\item \verb|git push origin master|
-\item Buka web repo kita di github.com
+\item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit.
+\item File yang barusan diubah wajib kita daftarkan pada daftar perubahan yang kita lakukan yaitu dengan perintah \textit{git add namafilenya.tex}
+\item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit.
+\item Setelah file diubah maka kita wajib menambahkan komentar terhadap file yang kita ubah tersebut agar mempermudah kontributor yang lain mengetahui apa saja yang kita perbuat terhadap file yang sudah kita add. Perintah untuk memberi komentar dari file yang sudah di \textit{git add} adalah :\textit{git commit -m `perubahan apa yang telah kita lakukan di ceritakan di sini secara lengkap'}
+\item Akan muncul permintaan konfigurasi global seperti gambar \ref{configglobal}. Maka kita harus memasukkan konfigurasi global baru setelah itu kita ulang kembali perintah \textit{git commit}.
+\begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+git config --global user.email "awangga@gmail.com"
+git config --global user.name "awangga"
+git commit -m "perubahan apa yang telah kita lakukan di ceritakan di sini secara lengkap"
+\end{lstlisting}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/configglobal}}
+\caption{Permintaan Setting Global}
+\label{configglobal}
+\end{figure}
+Setting global ini hanya sekali saja ketika baru melakukan instalasi git bash, selanjutnya tidak akan muncul kembali permintaan setting global ini.
+
+\item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit.
+\item Kemudian file yang sudah kita ubah kita upload ke website github.com dengan perintah \textit{git push origin master}.
+\item Buka web repo kita di website www.github.com
 Contoh disini\\
- \textbf{https://github.com/usernameAnda/Testing} \\kemudian klik New pull request. Pastikan yang sebelah kiri atau base kita set kepada repo utama tempat fork kita yaitu RepoAsal/Testing dan compare pada sebelah kanan adalah repo kita, disini dicontohkan usernameAnda/Testing. Klik tombol hijau `Create Pull Request'. Share. Dan klik kembali tombol hijau lagi.
+ \textbf{https://github.com/usernameAnda/Testing} \\kemudian klik \textbf{New pull request}. Pastikan yang sebelah kiri atau base kita set kepada repo utama tempat fork kita yaitu RepoAsal/Testing dan compare pada sebelah kanan adalah repo kita, disini dicontohkan usernameAnda/Testing dan ilustrasi bisa dilihat di gambar \ref{pullrequest}. Klik tombol hijau `Create Pull Request'. Share. Dan klik kembali tombol hijau lagi.
 \item Beritahukan admin repo utama untuk accept Pull Request Anda. Jika sudah di accept lakukan lagi langkah dari awal.
 \end{enumerate}
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/pullrequest}}
+\caption{Setelah klik New pull request}
+\label{pullrequest}
+\end{figure}
