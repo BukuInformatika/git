@@ -1,11 +1,13 @@
 \section{Latihan}
+
 Bisa karena biasa, rumit karena tak dicicil. Maka pemakaian git adalah masalah kebiasaan. Oleh karena itu, dalam pembukaan awal buku ini justru kita tidak dulu masuk kepada teori git tapi langsung praktek. setelah berkali-kali praktek maka akan timbul beberapa pertanyaan mengenai fungsi dari perintah-perintah git yang bisa dibaca pada bagian selanjutnya.
+
 
 Skenarionya adalah kita akan melakukan kontribusi terhadap sebuah repo \textit{Open Source} di GitHub. Jadi latihan ini adalah latihan bagaimana ikut berkontribusi kepada repo \textit{Open Source} yang ada di Github yang selama ini digunakan oleh para relawan kode untuk bersama membangun kode program berbasis \textit{Open Source}.
 \subsection{Konfigurasi Key}
 Pertama kita masuk kepada tahapan \textit{setting} atau konfigurasi \textit{key} untuk mengakses semua repo dari \textit{profile} kita dari \textit{git bash}:
-\begin{enumerate}
 
+\begin{enumerate}
 \item Buat akun di www.github.com terlebih dahulu
 \item Install \textbf{Git Bash} dari alamat \textit{git-scm.com/downloads} di komputer Anda, kemudian buka \textit{git bash}.
 \item Pastikan sudah ada di \textit{home directory} dengan mengetikkan perintah \verb|cd| kemudian \textit{enter}. Untuk mengetahui posisi Anda ada di direktori mana ketikkan perintah \verb|pwd| dan \textit{enter}.
@@ -45,7 +47,14 @@ Hasilnya seperti pada gambar \ref{luaran2}.
 
 
 \subsection{Fork Repositori}
-Pertama kita cari repositori utama yang akan kita ikut berkontribusi kepada repositori tersebut. Jika sudah ketemu, kemudian klik Fork(Tombol kanan atas) yang dilanjutkan dengan memilih akun kita sebagai tujuan clone fork tersebut. Setelah selesai maka kita akan memiliki repo yang sama dengan repo yang anda fork. Contoh apabila anda melakukan Fork dari https://github.com/RepoAsal/Testing maka anda akan memiliki repo https://github.com/usernameAnda/Testing, dan kita akan bekerja pada repo hasil fork ini.
+Pertama kita cari repositori utama yang akan kita jadikan tempat berkontribusi dalam repositori tersebut. Jika sudah ketemu, kemudian klik Fork(Tombol kanan atas)seperti pada gambar \ref{fork}
+  \begin{figure}[!htbp]
+        \centering
+            \includegraphics[width=.85\textwidth]{Figures/Click-Fork}
+            \caption{Click-Fork}
+        \label{fork}
+    \end{figure}
+yang dilanjutkan dengan memilih akun kita sebagai tujuan clone fork tersebut. Setelah selesai maka kita akan memiliki repo yang sama dengan repo yang anda fork. Contoh apabila anda melakukan Fork dari https://github.com/RepoAsal/Testing maka anda akan memiliki repo https://github.com/usernameAnda/Testing, dan kita akan bekerja pada repo hasil fork ini.
 
 
 \subsection{Navigasi direktori dengan Git Bash}
@@ -73,11 +82,13 @@ git status
 \end{figure}
 
 \subsection{Sinkronisasi dengan Repo Utama}
+
 Karena ini repo hasil Fork maka kita harus selalu di sinkronisasi dari repo aslinya(tidak otomatis tersingkron). Sehingga perlu melakukan setting sumber repo tujuan yang merupakan repo asal. Pertama pastikan git bash sudah pada direktori repositori. Untuk melakukan sinkronisasi dengan repo asal kita harus mengeset satu kali dengan perintah listing \ref{lst:addupstream}.
 
 \begin{lstlisting}[caption=Set Repo Asal Sebagai Upstream,label={lst:addupstream}]
 git remote add upstream https://github.com/RepoAsal/Testing.git
 \end{lstlisting}
+
 
 Setelah melakukan \textit{setting} sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan perintah listing \ref{lst:sinkronisasifork}.
 
@@ -92,6 +103,7 @@ git push origin master
 \subsection{Bekerja dengan Git Bash}
 Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada \textit{file}. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita \textit{fork} repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
 \begin{enumerate}
+
 \item Sebelum mulai mengerjakan, sinkronisasi kembali dengan repo asli lagi agar terhindar dari konflik dengan perintah di listing \ref{lst:sinkronisasifork}.
 
 \item Silahkan edit satu file yang akan di ubah atau ditambah lalu di simpan dan di tutup yang berada di direktori yang sudah disetting di navigasi direktori. Seperti terlihat pada gambar \ref{penanda}.
