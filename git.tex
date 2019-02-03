@@ -25,6 +25,36 @@
 \documentclass{wileySix}
 
 \usepackage{graphicx}
+\usepackage{listings}
+
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=sh
+}
+ 
+\lstset{style=mystyle}
 
 %%%%%%%
 %% for times math: However, this package disables bold math (!)
@@ -98,16 +128,16 @@
 \begin{document}
 
 
-\booktitle{Survey Methodology}
-\subtitle{This is the Subtitle}
+\booktitle{Cerdas Menguasai Git}
+\subtitle{Dalam 24 Jam}
 
-\authors{Robert M. Groves\\
-\affil{Universitat de les Illes Balears}
-Floyd J. Fowler, Jr.\\
-\affil{University of New Mexico}
+\authors{Rolly M. Awangga\\
+\affil{Politeknik Pos Indonesia}
+%Floyd J. Fowler, Jr.\\
+%\affil{University of New Mexico}
 }
 
-\offprintinfo{Survey Methodology, Second Edition}{Robert M. Groves}
+\offprintinfo{Cerdas Menguasai Git, First Edition}{Rolly M. Awangga}
 
 %% Can use \\ if title, and edition are too wide, ie,
 %% \offprintinfo{Survey Methodology,\\ Second Edition}{Robert M. Groves}
@@ -120,144 +150,54 @@ Floyd J. Fowler, Jr.\\
 
 
 \begin{copyrightpage}{2007}
-Survey Methodology / Robert M. Groves . . . [et al.].
-\       p. cm.---(Wiley series in survey methodology)
-\    ``Wiley-Interscience."
-\    Includes bibliographical references and index.
-\    ISBN 0-471-48348-6 (pbk.)
-\    1. Surveys---Methodology.  2. Social 
-\  sciences---Research---Statistical methods.  I. Groves, Robert M.  II. %
-Series.\\
-
-HA31.2.S873 2007
-001.4'33---dc22                                             2004044064
+\input{info/copyrightpage}
 \end{copyrightpage}
 
 \dedication{To my parents}
 
 \begin{contributors}
-\name{Masayki Abe,} Fujitsu Laboratories Ltd., Fujitsu Limited, Atsugi,
-Japan
-
-\name{L. A. Akers,} Center for Solid State Electronics Research, Arizona
-State University, Tempe, Arizona
-
-\name{G. H. Bernstein,} Department of Electrical and
-Computer Engineering, University of Notre Dame, Notre Dame, South Bend, 
-Indiana; formerly of
-Center for Solid State Electronics Research, Arizona
-State University, Tempe, Arizona 
+\input{info/contributors}
 \end{contributors}
 
 \contentsinbrief
 \tableofcontents
 \listoffigures
 \listoftables
+\lstlistoflistings
 
 
 \begin{foreword}
-This is the foreword to the book.
+\input{info/foreword}
 \end{foreword}
 
 \begin{preface}
-This is an example preface.
-This is an example preface.
-This is an example preface.
-This is an example preface.
-
-\prefaceauthor{R. K. Watts}
-\where{Durham, North Carolina\\
-September, 2007}
-
+\input{info/preface}
 \end{preface}
 
 
 \begin{acknowledgments}
-From Dr.~Jay Young, consultant from Silver Spring, Maryland, I received
-the initial push to even consider writing this book. Jay was a constant
-``peer reader'' and very welcome advisor durying this year-long process.
-
-
-To all these wonderful people I owe a deep sense of gratitude especially now
-that this project has been completed.
-\authorinitials{G. T. S.}
+\input{info/acknowledgments}
 \end{acknowledgments}
 
 \begin{acronyms}
-\acro{ACGIH}{American Conference of Governmental Industrial Hygienists}
-\acro{AEC}{Atomic Energy Commission}
-\acro{OSHA}{Occupational Health and Safety Commission}
-\acro{SAMA}{Scientific Apparatus Makers Association}
+\input{info/acronyms}
 \end{acronyms}
 
 \begin{glossary}
-\term{NormGibbs}Draw a sample from a posterior distribution
-of data with an unknown mean and variance using Gibbs sampling.
-
-\term{pNull}Test a one sided hypothesis from a numberically
-specified posterior CDF or from a sample from the posterior
-
-\term{sintegral}A numerical integration using Simpson's rule
+\input{info/glossary}
 \end{glossary}
 
 \begin{symbols}
-\term{A}Amplitude
-
-\term{\hbox{\&}}Propositional logic symbol 
-
-\term{a}Filter Coefficient
-
-\bigskip
-
-\term{\mathcal{B}}Number of Beats
+\input{info/symbols}
 \end{symbols}
 
 \begin{introduction}
-
-%% optional, but if you want to list author:
-
-\introauthor{Catherine Clark, PhD.}
-{Harvard School of Public Health\\
-Boston, MA, USA}
-
-The era of modern \index{microelectronics}\index{microelectronics!modern} 
-began in 1958 with the invention of the
-integrated circuit by J.~S.~Kilby
- of Texas Instruments.
-His first chip is shown in Fig.~I. For comparison,
-Fig.~I.2 shows a modern microprocessor chip,.
-
-
-This is the introduction.
-This is the introduction.
-This is the introduction.
-This is the introduction.
-This is the introduction.
-This is the introduction.
-
-\begin{equation}
-ABC {\cal DEF} \alpha\beta\Gamma\Delta\sum^{abc}_{def}
-\end{equation}
-
-
-\begin{chapreferences}{3.}
-\bibitem{zkilby}J. S. Kilby,
-``Invention of the Integrated Circuit,'' {\it IEEE Trans. Electron Devices,}
-{\bf ED-23,} 648 (1976).
-
-\bibitem{zhamming}R. W. Hamming,
-                 {\it Numerical Methods for Scientists and 
-                 Engineers}, Chapter N-1, McGraw-Hill, 
-                 New York, 1962.
-
-\bibitem{zHu}J. Lee, K. Mayaram, and C. Hu, ``A Theoretical
-               Study of Gate/Drain Offset in LDD MOSFETs''
-                     {\it IEEE Electron Device Lett.,} {\bf EDL-7}(3). 152 
-                     (1986).
-\end{chapreferences}
+\input{info/introduction}
 \end{introduction}
 
-\chapter{Home}
+%%%%%%%%%%%%%%%%%%Isi Buku_
+
+\chapter{Praktek Cepat}
 \input{chapter/Home}
 
 \chapter{Perintah Dasar Bash}
@@ -299,28 +239,32 @@ ABC {\cal DEF} \alpha\beta\Gamma\Delta\sum^{abc}_{def}
 \chapter{Rename Operation}
 \input{chapter/RenameOperation}
 
-\begin{references}{Ham62}
-\bibitem[Kil76]{kilb}J. S. Kilby,
-``Invention of the Integrated Circuit,'' {\it IEEE Trans. Electron Devices,}
-{\bf ED-23,} 648 (1976).
+%\begin{references}{Ham62}
+%\bibitem[Kil76]{kilb}J. S. Kilby,
+%``Invention of the Integrated Circuit,'' {\it IEEE Trans. Electron Devices,}
+%{\bf ED-23,} 648 (1976).
+%
+%\bibitem[Ham62]{hamm}R. W. Hamming,
+%                 {\it Numerical Methods for Scientists and 
+%                 Engineers}, Chapter N-1, McGraw-Hill, 
+%                 New York, 1962.
+%
+%\bibitem[Hu86]{lee}J. Lee, K. Mayaram, and C. Hu, ``A Theoretical
+%               Study of Gate/Drain Offset in LDD MOSFETs''
+%                     {\it IEEE Electron Device Lett.,} {\bf EDL-7}(3). 152 
+%                     (1986).
+%
+%\bibitem[Ber87]{berm}A. Berenbaum, 
+%B. W. Colbry, D.R. Ditzel, R. D Freeman, and 
+%K.J. O'Connor, ``A Pipelined 32b Microprocessor with 13 kb of Cache Memory,''
+%{it Int. Solid State Circuit Conf., Dig. Tech. Pap.,} p. 34 (1987).
+%
+%\end{references}
 
-\bibitem[Ham62]{hamm}R. W. Hamming,
-                 {\it Numerical Methods for Scientists and 
-                 Engineers}, Chapter N-1, McGraw-Hill, 
-                 New York, 1962.
 
-\bibitem[Hu86]{lee}J. Lee, K. Mayaram, and C. Hu, ``A Theoretical
-               Study of Gate/Drain Offset in LDD MOSFETs''
-                     {\it IEEE Electron Device Lett.,} {\bf EDL-7}(3). 152 
-                     (1986).
-
-\bibitem[Ber87]{berm}A. Berenbaum, 
-B. W. Colbry, D.R. Ditzel, R. D Freeman, and 
-K.J. O'Connor, ``A Pipelined 32b Microprocessor with 13 kb of Cache Memory,''
-{it Int. Solid State Circuit Conf., Dig. Tech. Pap.,} p. 34 (1987).
-
-\end{references}
-
+\bibliographystyle{model5-names} 
+%\def\bibfont{\normalsize}
+\bibliography{references}
 
 
 %%%%%%%%%%%%%%%
