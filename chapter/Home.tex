@@ -70,7 +70,8 @@ git remote add upstream https://github.com/RepoAsal/Testing.git
 
 Setelah melakukan \textit{setting} sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan dua perintah berikut :
 
-\begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+\begin{lstlisting}[language=sh, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+git pull origin master
 git fetch upstream
 git pull upstream master
 git push origin master
@@ -81,7 +82,8 @@ git push origin master
 Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada \textit{file}. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita \textit{fork} repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
 \begin{enumerate}
 \item Sebelum mulai mengerjakan, sinkronisasi kembali dengan repo asli lagi agar terhindar dari konflik dengan perintah :
-\begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+\begin{lstlisting}[language=sh, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+git pull origin master
 git fetch upstream
 git pull upstream master
 git push origin master
@@ -90,7 +92,7 @@ git push origin master
     \begin{figure}[!htbp]
         \centering
             \includegraphics[width=.75\textwidth]{Figures/Capture}
-            \caption{Direktori}
+            \caption{Direktori kerja git dari Explorer}
         \label{penanda}
     \end{figure}
 \item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit.
@@ -98,7 +100,7 @@ git push origin master
 \item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit.
 \item Setelah file diubah maka kita wajib menambahkan komentar terhadap file yang kita ubah tersebut agar mempermudah kontributor yang lain mengetahui apa saja yang kita perbuat terhadap file yang sudah kita add. Perintah untuk memberi komentar dari file yang sudah di \textit{git add} adalah :\textit{git commit -m `perubahan apa yang telah kita lakukan di ceritakan di sini secara lengkap'}
 \item Akan muncul permintaan konfigurasi global seperti gambar \ref{configglobal}. Maka kita harus memasukkan konfigurasi global baru setelah itu kita ulang kembali perintah \textit{git commit}.
-\begin{lstlisting}[language=bash, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+\begin{lstlisting}[language=sh, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
 git config --global user.email "awangga@gmail.com"
 git config --global user.name "awangga"
 git commit -m "perubahan apa yang telah kita lakukan di ceritakan di sini secara lengkap"
@@ -110,8 +112,17 @@ git commit -m "perubahan apa yang telah kita lakukan di ceritakan di sini secara
 \end{figure}
 Setting global ini hanya sekali saja ketika baru melakukan instalasi git bash, selanjutnya tidak akan muncul kembali permintaan setting global ini.
 
-\item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit.
+\item Cek status git dengan perintah \textit{git status}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit. Lihat gambar \ref{gitstatus}.
 \item Kemudian file yang sudah kita ubah kita upload ke website github.com dengan perintah \textit{git push origin master}.
+\item Sinkronisasi kembali dengan repo asli lagi sebelum beberapa detik melakukan \textbf{New pull request} agar terhindar dari konflik dengan perintah :
+\begin{lstlisting}[language=sh, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+git pull origin master
+git fetch upstream
+git pull upstream master
+git push origin master
+\end{lstlisting}
+Apabila terdapat konflik jangan panik, itu namanya merge. Yang artinya menyatukan pekerjaan di web repo dengan repo lokal komputer kita. Apabila keluar tiba-tiba text editor dalam git-bash sehingga kita tidak bisa memasukkan perintah(tidak ada tanda dolarnya). Maka simpan saja dengan menekan tombol \textit{esc} kemudian ketik \textit{:wq} yang berfungsi untuk menyimpan dan tekan tombol \textit{enter}.
+
 \item Buka web repo kita di website www.github.com
 Contoh disini\\
  \textbf{https://github.com/usernameAnda/Testing} \\kemudian klik \textbf{New pull request}. Pastikan yang sebelah kiri atau base kita set kepada repo utama tempat fork kita yaitu RepoAsal/Testing dan compare pada sebelah kanan adalah repo kita, disini dicontohkan usernameAnda/Testing dan ilustrasi bisa dilihat di gambar \ref{pullrequest}. Klik tombol hijau \textit{Create Pull Request} kemudian teruskan sampai ada kembali tombol hijau yang kita klik lagi.
@@ -125,3 +136,22 @@ Contoh disini\\
 \end{enumerate}
 
 
+
+\subsection{Penting di ingat}
+Penting yang harus diingat ada tiga. Pertama pastikan git bash kita berada pada direktori repositori git yang dikerjakan, biasanya ditandai ada nama \textit{branch} di git bash nya. Sebagai contoh pada gambar \ref{configglobal} terlihat di ujung sebelum perintah dimasukkan ada tulisan \textit{master} warna biru muda. Itu artinya kita berada pada direktori repositori dengan \textit{branch} master. Di sebelah kiri \textit{master} ada tulisan kuning \textit{/A/Git/git}, yang artinya kita berada pada drive \textit{A:} windows. Pada drive \textit{A:} tersebut ada folder Git(G besar) yang didalam folder Git ada repo clone dengan folder git(g kecil). Posisi kita ada di dalam folder git tersebut.
+Sebagai contoh kedua pada gambar \ref{penanda}, maka tulisan pada git bash tempat kita bekerja menjadi \textit{/D/git/git} atau \textit{/D/git/git/chapter}.
+
+Kedua, sering-sering menggunakan git status untuk mengetahui sejauh mana kita melakukan perubahan. git status akan memberitahukan kita langkah apa saja yang harus kita lakukan, jika kita lupa langkah-langkah pengerjaan diatas. Pada gambar \ref{gitstatus}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit dan terakhir kita juga diberikan petunjuk untuk segera \textit{git push}.
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/gitstatus}}
+\caption{Berbagai macam luaran git status}
+\label{gitstatus}
+\end{figure}
+
+Ketiga, sebelum melakukan pekerjaan dan sebelum melakukan \textbf{New pull request}(dua kali). Pastikan repo lokal di komputer kita sinkron dengan yang ada di github baik itu repo asli maupun repo hasil fork milik kita dengan perintah :
+\begin{lstlisting}[language=sh, caption=Perintah Sinkronisasi dengan repo asal,breaklines]
+git pull origin master
+git fetch upstream
+git pull upstream master
+git push origin master
+\end{lstlisting}
