@@ -150,14 +150,20 @@ Contoh disini\\
 
 
 \subsection{Mengatasi \textit{Error}}
+Seorang programmer atau anak if pantang menyebutkan bahwa programnya error dan menyerah begitu saja. Error merupakan sebuah anugerah yang harus kita syukuri. Beruntungnya di git semua error memiliki petunjuk yang jelas. Sehingga apabila kita mendapati error, pastikan membaca dengan baik error nya dan selesaikan errornya dengan tenang dan santai. Karena error git sangat sederhana dan mudah sekali untuk diatasi. Atasi error tersebut dan jangan lari dari error tersebut.
+
 \subsubsection{Kesalahan direktori}
+Apabila bertemu error seperti pada listing \ref{lst:errorbukanrepo}. Pastikan git bash kita berada pada direktori repositori git yang dikerjakan, biasanya ditandai ada nama \textit{branch} di git bash nya. 
+
 \begin{lstlisting}[caption=Kesalahan karena bukan pada direktori repositori,label={lst:errorbukanrepo}]
 fatal: not a git repository (or any of the parent directories): .git
 \end{lstlisting}
-Apabila bertemu error seperti pada listing \ref{lst:errorbukanrepo}. Pastikan git bash kita berada pada direktori repositori git yang dikerjakan, biasanya ditandai ada nama \textit{branch} di git bash nya. Sebagai contoh pada gambar \ref{configglobal} terlihat di ujung sebelum perintah dimasukkan ada tulisan \textit{master} warna biru muda. Itu artinya kita berada pada direktori repositori dengan \textit{branch} master. Di sebelah kiri \textit{master} ada tulisan kuning \textit{/A/Git/git}, yang artinya kita berada pada drive \textit{A:} windows. Pada drive \textit{A:} tersebut ada folder Git(G besar) yang didalam folder Git ada repo clone dengan folder git(g kecil). Posisi kita ada di dalam folder git tersebut.
+
+Sebagai contoh pada gambar \ref{configglobal} terlihat di ujung sebelum perintah dimasukkan ada tulisan \textit{master} warna biru muda. Itu artinya kita berada pada direktori repositori dengan \textit{branch} master. Di sebelah kiri \textit{master} ada tulisan kuning \textit{/A/Git/git}, yang artinya kita berada pada drive \textit{A:} windows. Pada drive \textit{A:} tersebut ada folder Git(G besar) yang didalam folder Git ada repo clone dengan folder git(g kecil). Posisi kita ada di dalam folder git tersebut.
 Sebagai contoh kedua pada gambar \ref{penanda}, maka tulisan pada git bash tempat kita bekerja menjadi \textit{/D/git/git} atau \textit{/D/git/git/chapter}.
 
 \subsubsection{Gagal Fetch Upstream}
+Apabila anda pada saat melakukan \textit{git fetch upstream} atau \textit{git pull upstream master} keluar error seperti pada listing \ref{lst:errorfetchupstream}. 
 \begin{lstlisting}[caption=Gagal melakukan fetch upstream,label={lst:errorfetchupstream}]
 fatal: 'upstream' does not appear to be a git repository
 fatal: Could not read from remote repository.
@@ -165,7 +171,7 @@ fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
 and the repository exists.
 \end{lstlisting}
-Apabila anda pada saat melakukan \textit{git fetch upstream} atau \textit{git pull upstream master} keluar error seperti pada listing \ref{lst:errorfetchupstream}. Maka ada dua kemungkinan, kemungkinan pertama anda belum melakukan set upstream seperti pada perindah di listing \ref{lst:addupstream}. Silahkan lakukan dahulu perintah di listing \ref{lst:addupstream}. Salah satu contoh repo yang belum melakukan perintah dari listing \ref{lst:addupstream} bisa dilihat di gambar \ref{errorfetch}.
+Maka ada dua kemungkinan, kemungkinan pertama anda belum melakukan set upstream seperti pada perindah di listing \ref{lst:addupstream}. Silahkan lakukan dahulu perintah di listing \ref{lst:addupstream}. Salah satu contoh repo yang belum melakukan perintah dari listing \ref{lst:addupstream} bisa dilihat di gambar \ref{errorfetch}.
 
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/errorfetch}}
