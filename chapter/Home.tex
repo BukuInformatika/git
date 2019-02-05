@@ -145,6 +145,36 @@ fatal: not a git repository (or any of the parent directories): .git
 Apabila bertemu error seperti pada listing \ref{lst:errorbukanrepo}. Pastikan git bash kita berada pada direktori repositori git yang dikerjakan, biasanya ditandai ada nama \textit{branch} di git bash nya. Sebagai contoh pada gambar \ref{configglobal} terlihat di ujung sebelum perintah dimasukkan ada tulisan \textit{master} warna biru muda. Itu artinya kita berada pada direktori repositori dengan \textit{branch} master. Di sebelah kiri \textit{master} ada tulisan kuning \textit{/A/Git/git}, yang artinya kita berada pada drive \textit{A:} windows. Pada drive \textit{A:} tersebut ada folder Git(G besar) yang didalam folder Git ada repo clone dengan folder git(g kecil). Posisi kita ada di dalam folder git tersebut.
 Sebagai contoh kedua pada gambar \ref{penanda}, maka tulisan pada git bash tempat kita bekerja menjadi \textit{/D/git/git} atau \textit{/D/git/git/chapter}.
 
+\subsubsection{Gagal Fetch Upstream}
+\begin{lstlisting}[caption=Gagal melakukan fetch upstream,label={lst:errorfetchupstream}]
+fatal: 'upstream' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+\end{lstlisting}
+Apabila anda pada saat melakukan \textit{git fetch upstream} atau \textit{git pull upstream master} keluar error seperti pada listing \ref{lst:errorfetchupstream}. Maka ada dua kemungkinan, kemungkinan pertama anda belum melakukan set upstream seperti pada perindah di listing \ref{lst:addupstream}. Silahkan lakukan dahulu perintah di listing \ref{lst:addupstream}. Salah satu contoh repo yang belum melakukan perintah dari listing \ref{lst:addupstream} bisa dilihat di gambar \ref{errorfetch}.
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/errorfetch}}
+\caption{Gagal Fetch Upstream}
+\label{errorfetch}
+\end{figure}
+
+Apabila anda sudah melakukan set upstream maka untuk melakukan pengecekan kita lihat dengan perintah di listing \ref{lst:gitconfig}.
+\begin{lstlisting}[caption=Melihat konfigurasi git di repo komputer kita,label={lst:gitconfig}]
+git config -l
+\end{lstlisting}
+Jika sudah ter set maka akan ada bagian yang berisi \textit{remote.upstream.url} seperti pada listing \ref{lst:upstreamconfig}.
+\begin{lstlisting}[caption=Hasil perintah \textit{git config -l},label={lst:upstreamconfig}]
+remote.upstream.url=https://github.com/RepoAsal/Testing.git
+remote.upstream.fetch=+refs/heads/*:refs/remotes/upstream/*
+\end{lstlisting}
+Pastikan upstream berbentuk \textit{https} bukan \textit{ssh}. Apabila anda salah melakukan setting upstream anda bisa menghapusnya dengan perintah yang ada di listing \ref{lst:removeupstream}. Baru setelah itu lakukan lagi set upstream dengan perintah di listin \ref{lst:addupstream}.
+\begin{lstlisting}[caption=Perintah menghapus upstream yang salah,label={lst:removeupstream}]
+git remote remove upstream
+\end{lstlisting}
+
 \subsubsection{Lupa langkah}
 Sering-sering menggunakan git status untuk mengetahui sejauh mana kita melakukan perubahan. git status akan memberitahukan kita langkah apa saja yang harus kita lakukan, jika kita lupa langkah-langkah pengerjaan diatas. Pada gambar \ref{gitstatus}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit dan terakhir kita juga diberikan petunjuk untuk segera \textit{git push}.
 \begin{figure}[!htbp]
