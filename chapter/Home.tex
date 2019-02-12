@@ -60,7 +60,23 @@ yang dilanjutkan dengan memilih akun kita sebagai tujuan clone fork tersebut. Se
 \subsection{Navigasi direktori dengan Git Bash}
 Pertama kita tentukan terlebih dahulu folder tempat kita mengerjakan repo hasil fork kita. Misal di Drive D: folder Ganteng. Maka buka git bash kita dan arahkan menuju folder tersebut dengan perintah 
 \verb|cd /D/Ganteng|.
-Buka web repo fork kita di github klik tombol hijau \textbf{Clone or Download} pilih Clone with SSH lalu salin kode yang tampak seperti \textit{git@github.com:usernameAnda/Testing.git}. Pada Git Bash ketik \textit{git clone git@github.com:usernameAnda/Testing.git} hasilnya seperti terlihat pada gambar \ref{gitclone}. Setelah selesai, ketik perintah \textit{ls} maka akan muncul direktori baru yaitu folder Testing atau sesuai dengan nama repo Anda. masuk ke direktori tersebut dengan perintah \textit{cd Testing}. Kemudian ketik \textit{git status} akan muncul status dari repo git kita, ringkasan perintahnya bisa dilihat pada perintah listing \ref{lst:navigasikerepo}.sebagai contoh lihat hasilnya pada gambar \ref{lscdstatus}.
+Buka web repo fork kita di github klik tombol hijau \textbf{Clone or Download} pilih Clone with SSH(Gambar \ref{fig:clone1}) lalu salin kode yang tampak seperti \textit{git@github.com:usernameAnda/Testing.git}. 
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/clone1}}
+\caption{Hasil Perintah git clone}
+\label{fig:clone1}
+\end{figure}
+
+Pada Git Bash ketik \textit{git clone git@github.com:usernameAnda/Testing.git} hasilnya seperti terlihat pada gambar \ref{gitclone}. 
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/gitclone}}
+\caption{Hasil Perintah git clone}
+\label{gitclone}
+\end{figure}
+
+Setelah selesai, ketik perintah \textit{ls} maka akan muncul direktori baru yaitu folder Testing atau sesuai dengan nama repo Anda. masuk ke direktori tersebut dengan perintah \textit{cd Testing}. Kemudian ketik \textit{git status} akan muncul status dari repo git kita, ringkasan perintahnya bisa dilihat pada perintah listing \ref{lst:navigasikerepo}.sebagai contoh lihat hasilnya pada gambar \ref{lscdstatus}.
 
 \begin{lstlisting}[caption=Navigasi direktori menuju repositori,label={lst:navigasikerepo}]
 cd /D/Ganteng
@@ -70,11 +86,6 @@ cd Testing
 git status
 \end{lstlisting}
 
-\begin{figure}[!htbp]
-\centerline{\includegraphics[width=.75\textwidth]{Figures/gitclone}}
-\caption{Hasil Perintah git clone}
-\label{gitclone}
-\end{figure}
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/lscdstatus}}
 \caption{Hasil Perintah ls, cd dan git status}
@@ -192,6 +203,18 @@ Pastikan upstream berbentuk \textit{https} bukan \textit{ssh}. Apabila anda sala
 \begin{lstlisting}[caption=Perintah menghapus upstream yang salah,label={lst:removeupstream}]
 git remote remove upstream
 \end{lstlisting}
+
+\subsubsection{Salah Clone}
+Buat pemula, kesalahan ini kadang terjadi jika tidak hati-hati membaca langkah-langkah sebelumnya. Apabila bertemu pesan kesalahan seperti pada listing \ref{lst:accessdenied}. Dari listing tersebut terliat \textit{jonluca/Anubis.git} adalah repo utama bukan repo clone kita perhatikan pada baris pertama listing to \textit{awangga} yang merupakan user github kita. Sehingga ini adalah kesalahan dalam clone, seharusnya repo yang di clone adalah awangga/Anubis.git. Ulang kembali kepada langkah clone repo, jika clone repo belum ada maka ulangi langkah fork.
+\begin{lstlisting}[caption=Peringatan \textit{Permission denied},label={lst:accessdenied}]
+ERROR: Permission to jonluca/Anubis.git denied to awangga.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+\end{lstlisting}
+
+
 
 \subsubsection{Lupa langkah}
 Sering-sering menggunakan git status untuk mengetahui sejauh mana kita melakukan perubahan. git status akan memberitahukan kita langkah apa saja yang harus kita lakukan, jika kita lupa langkah-langkah pengerjaan diatas. Pada gambar \ref{gitstatus}, jika terdapat warna merah berarti belum kita add, jika terdapat warna hijau berarti belum kita commit dan terakhir kita juga diberikan petunjuk untuk segera \textit{git push}.
