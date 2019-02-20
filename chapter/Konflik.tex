@@ -1,5 +1,45 @@
-\section{Pada Website}
-Ini biasanya terjadi pada saat melakukan pull request. Tertulis pada website ada konflik seperti gambar \ref{fig:webkonflik1}. 
+\section{Pada Repo Lokal}
+Semakin banyak yang bekerja maka semakin sering terjadi konflik. Sebagai contoh apabila dalam satu waktu atau satu hari ada empat orang melakukan penambahan atau pengurangan kode atau tulisan pada repo yang sama dan file yang sama, maka bisa dipastikan pasti akan terdapat konflik. Sehingga konflik merupakan hal yang biasa dan tidak perlu panik. Hanya kita harus mengetahui bagaimana melakukan solusi merge terhadap konflik tersebut. Karena satu satunya cara agar konflik bisa tersolusikan adalah dengan merge. Beberapa hal yang harus sering diperhatikan agar penyelesaian konflik tidak bikin kita pusing, antara lain :
+\begin{itemize}
+	\item sebelum melakukan pekerjaan pastikan sudah melakukan \textit{git pull origin master, git fetch upstream, git pull upstream master, git push origin master}.
+	\item setelah menyelesaikan editing pada satu file, maka lakukan add dan commit hanya untuk satu file, hindari commit untuk beberapa file. jadi git add satufile, git commit apa yang dilakukan pada file tersebut. Jadi apabila ada dua file maka ada dua kali commit.
+	\item sebelum melakukan \textit{pull request} pastikan juga sudah melakukan \textit{git pull origin master, git fetch upstream, git pull upstream master, git push origin master}.
+\end{itemize}
+Nah karena konflik adalah sebuah kepastian maka cara mengatasinya pun harus tepat. Pertama biasanya commit datang setelah melakukan \textit{git pull origin master, git fetch upstream, git pull upstream master, git push origin master}. 
+Biasanya akan muncul editor \textit{vi} seperti pada gambar \ref{fig:editorvimergesimpan} pada saat memasukkan perintah pull. Kita tinggal menyimpannya dengan menekan tombol esc, tombol :, tombol w, tombol q, tombol enter.
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/editorvimergesimpan}}
+\caption{Muncul editor vi pada saat pull}
+\label{fig:editorvimergesimpan}
+\end{figure}
+
+Baru setelah itu kita buka file yang konflik tersebut, sebagai contoh pada gambar \ref{fig:fileyangkonflik}. Perhatikan di gambar \ref{fig:fileyangkonflik} ada tulisan \textit{CONFLICT (content): Merge conflict in chapters/1.tex}. 
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/fileyangkonflik}}
+\caption{Konflik Pada Saat \textit{git pull}}
+\label{fig:fileyangkonflik}
+\end{figure}
+
+Artinya kita harus membuka file \textit{chapters/1.tex} karena ada konflik di dalamnya. Buka dengan editor kesukaan kita dan cari tanda konflik seperti pada gambar \label{fig:konfliksebelum}. Perhatikan tugas kita adalah melakukan \textit{merge}, apa itu \textit{merge}? Merge adalah proses untuk melakukan penggabungan dari file atau baris yang telah di ubah dari beberapa versi yang konflik. Disini kita lihat bahwa pada gambar \label{fig:konfliksebelum} ada tanda sama dengan sebagai pemisah antara versi satu dan versi dua dengan batas atas tanda kurang dari beberapa kali dan batas bawah lebih dari beberapa kali. Artinya kita harus menggabungkan hasil versi satu dan versi dua tersebut menjadi satu kesatuan sesuai dengan permintaan dari pemilik repo. Cara penggabungannya mau tidak mau suka atau tidak suka, kita baca manual dan perhatikan mana yang berbeda dan mana yang harus di sempurnakan kemudian di jadikan satu versi. Sehingga hasil penggabungan bisa dilihat pada gambar \ref{fig:konfliksesudah}, tentunya batas versi dari konflik sudah dihapus jangan sampai tertinggal karena pasti akan masih dianggap konflik. Dan bisa jadi bukan hanya ada satu konflik dalam satu file tersebut, kita harus mencarilagi batas konflik dua versi tersebut. Setelah selesai maka kita bisa menyimpan dan melakukan git add dan git commit.
+
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/konfliksebelum}}
+\caption{Tanda pembatas antara versi satu dan dua yang konflik}
+\label{fig:konfliksebelum}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/konfliksesudah}}
+\caption{Konflik yang sudah diperbaiki menjadi satu versi baru lagi}
+\label{fig:konfliksesudah}
+\end{figure}
+
+
+\section{Pada Saat Pull Request di Web}
+Konflik yang terjadi pada web GitHub bagian ini biasanya terjadi pada saat melakukan pull request. Tertulis pada website ada konflik seperti gambar \ref{fig:webkonflik1}. 
 
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/webkonflik1}}
