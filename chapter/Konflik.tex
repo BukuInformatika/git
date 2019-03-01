@@ -5,7 +5,7 @@ Semakin banyak yang bekerja maka semakin sering terjadi konflik. Sebagai contoh 
 	\item setelah menyelesaikan editing pada satu file, maka lakukan add dan commit hanya untuk satu file, hindari commit untuk beberapa file. jadi git add satufile, git commit apa yang dilakukan pada file tersebut. Jadi apabila ada dua file maka ada dua kali commit.
 	\item sebelum melakukan \textit{pull request} pastikan juga sudah melakukan \textit{git pull origin master, git fetch upstream, git pull upstream master, git push origin master}.
 \end{itemize}
-Nah karena konflik adalah sebuah kepastian maka cara mengatasinya pun harus tepat. Pertama biasanya commit datang setelah melakukan \textit{git pull origin master, git fetch upstream, git pull upstream master, git push origin master}. 
+Nah karena konflik adalah sebuah kepastian maka cara mengatasinya pun harus tepat. Pertama biasanya commit datang setelah melakukan \textit{git pull origin master, git fetch upstream, git pull upstream master, git push origin master}.
 Biasanya akan muncul editor \textit{vi} seperti pada gambar \ref{fig:editorvimergesimpan} pada saat memasukkan perintah pull. Kita tinggal menyimpannya dengan menekan tombol esc, tombol :, tombol w, tombol q, tombol enter.
 
 \begin{figure}[!htbp]
@@ -14,7 +14,7 @@ Biasanya akan muncul editor \textit{vi} seperti pada gambar \ref{fig:editorvimer
 \label{fig:editorvimergesimpan}
 \end{figure}
 
-Baru setelah itu kita buka file yang konflik tersebut, sebagai contoh pada gambar \ref{fig:fileyangkonflik}. Perhatikan di gambar \ref{fig:fileyangkonflik} ada tulisan \textit{CONFLICT (content): Merge conflict in chapters/1.tex}. 
+Baru setelah itu kita buka file yang konflik tersebut, sebagai contoh pada gambar \ref{fig:fileyangkonflik}. Perhatikan di gambar \ref{fig:fileyangkonflik} ada tulisan \textit{CONFLICT (content): Merge conflict in chapters/1.tex}.
 
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/fileyangkonflik}}
@@ -39,7 +39,7 @@ Artinya kita harus membuka file \textit{chapters/1.tex} karena ada konflik di da
 
 
 \section{Pada Saat Pull Request di Web}
-Konflik yang terjadi pada web GitHub bagian ini biasanya terjadi pada saat melakukan pull request. Tertulis pada website ada konflik seperti gambar \ref{fig:webkonflik1}. 
+Konflik yang terjadi pada web GitHub bagian ini biasanya terjadi pada saat melakukan pull request. Tertulis pada website ada konflik seperti gambar \ref{fig:webkonflik1}.
 
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/webkonflik1}}
@@ -47,7 +47,7 @@ Konflik yang terjadi pada web GitHub bagian ini biasanya terjadi pada saat melak
 \label{fig:webkonflik1}
 \end{figure}
 
-Tetap tenang, ini sangatlah mudah untuk dilakukan solusinya yaitu dengan merge. Pertama kita klik Resolve conflicts yang terlihat pada gambar \ref{fig:webkonflik1}. Merge adalah proses memilih salah satu atau menggabungkan bagian yang ditandai oleh git. Sebagai contoh misalnya di gambar \ref{fig:webkonflik3}, tertulis ada 4 konflik. 
+Tetap tenang, ini sangatlah mudah untuk dilakukan solusinya yaitu dengan merge. Pertama kita klik Resolve conflicts yang terlihat pada gambar \ref{fig:webkonflik1}. Merge adalah proses memilih salah satu atau menggabungkan bagian yang ditandai oleh git. Sebagai contoh misalnya di gambar \ref{fig:webkonflik3}, tertulis ada 4 konflik.
 
 \begin{figure}[!htbp]
 \centerline{\includegraphics[width=.75\textwidth]{Figures/webkonflik3}}
@@ -64,6 +64,49 @@ Konflik yang pertama pada tulisan \textit{Bisa karena biasa....}. Maka kita ting
 \caption{Hasil Merge Setelah memilih dan menghapus tanda}
 \label{fig:webkonflik5}
 \end{figure}
+
+\section{Lupa Compile dan Ingin Menambah Materi Lagi}
+Bagaimana jika anda lupa meng-\textit{compile} padahal anda sudah melakukan tahap terakhir yaitu \textbf{git push origin master}. Ada solusi jitu untuk menanganinya tolong simak baik-baik ya.
+\begin{enumerate}
+  \item \textit{Compile} file \textbf{main.tex}, jika sudah selesai dan tanpa error anda kembali lagi ke gitbash.
+  \item Inputkan perintah \textbf{git status} untuk memeriksa kembali apa saja yang belum kita tambahakan seperti pada gambar \ref{fig:status}.
+      \begin{figure}[!htbp]
+      \centerline{\includegraphics[width=.75\textwidth]{Figures/manajemenkonflik/status.png}}
+      \caption{Memeriksa yang belum ditambahkan}
+      \label{fig:status}
+      \end{figure}
+  \item Tambahkan file yang belum ditambahkan, seperti pada gambar \ref{fig:add}.
+      \begin{figure}[!htbp]
+      \centerline{\includegraphics[width=.75\textwidth]{Figures/manajemenkonflik/add.png}}
+      \caption{Menambahkan file}
+      \label{fig:add}
+      \end{figure}
+  \item Melakukan proses pemeriksaan kembali untuk memastikan file yang ditambahkan sudah sesuai, seperti pada gambar \ref{fig:status1}.
+      \begin{figure}[!htbp]
+      \centerline{\includegraphics[width=.75\textwidth]{Figures/manajemenkonflik/status1.png}}
+      \caption{Memastikan file yang sudah ditambah}
+      \label{fig:status1}
+      \end{figure}
+  \item Melakukan proses \textit{Commit} seperti pada gambar \ref{fig:commit}.
+      \begin{figure}[!htbp]
+      \centerline{\includegraphics[width=.75\textwidth]{Figures/manajemenkonflik/commit.png}}
+      \caption{Melakukan proses commit}
+      \label{fig:commit}
+      \end{figure}
+  \item Nah ini adalah \textbf{Point Penting} yang selalu lupa untuk dilakukan yaitu melakukan perintah \textit{git pull upstream master}, mengapa harus melakukan hal tersebut? \textbf{Alasannya untuk menghindari terjadinya konflik dan memastikan bahwa repositori kita sudah up to date} seperti pada gambar \ref{fig:pull}.
+      \begin{figure}[!htbp]
+      \centerline{\includegraphics[width=.75\textwidth]{Figures/manajemenkonflik/pull.png}}
+      \caption{Memastikan bahwa sudah up to date}
+      \label{fig:pull}
+      \end{figure}
+  \item Step terakhir sudah pasti memasukkan perintah \textbf{git push origin master} seperti pada gambar \ref{fig:push}.
+      \begin{figure}[!htbp]
+      \centerline{\includegraphics[width=.75\textwidth]{Figures/manajemenkonflik/push.png}}
+      \caption{Step terakhir}
+      \label{fig:push}
+      \end{figure}
+\end{enumerate}
+
 
 
 
