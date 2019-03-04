@@ -107,6 +107,16 @@ Bagaimana jika anda lupa meng-\textit{compile} padahal anda sudah melakukan taha
       \end{figure}
 \end{enumerate}
 
-
-
-
+\section{Bagaimana cara mudah dan cepat untuk memperbaiki error yang tidak terdeteksi}
+Semakin banyak yang ikut berkontribusi di dalam sebuah repositori maka akan semakin sering menemui konflik, error merge dan permasalahan lainnya. Bagaimana solusinya jika tidak mengetahui error nya dimana. \textbf{Perhatikan dengan seksama ya}. Ini merupakan langkah yang tidak disarankan namun ampuh untuk menangani solusi.
+\begin{enumerate}
+  \item Hapus repo lama di direktory masing-masing,
+  \item Buka git bash dan melakukan proses clone ulang dengan perintah \textbf{git clone LinkSSHdariRepo},
+  \item Lalu masukkan perintah \textbf{cd RepoygSudahdiDownload},
+  \item Remote kembali repo kita sesuaikan dengan repo asal dengan perintah \textbf{git remote add upstream LinkHttpsdariRepoAsal},
+  \item Lalu melakukan Fetch dengan perintah \textbf{git fetch upstream},
+\item Melakukan Pull dengan perintah \textbf{git pull origin master},
+\item Lakukan kembali perintah \textbf{git fetch upstream},
+\item Melakukan Pull dengan perintah \textbf{git pull upstream master},
+\item Maka akan muncul pemberitahuan errornya dimana, dan periksa di chapter/file yang sudah diberitahukan. Dan tinggal diperbaiki yang mana baris yang tidak selaras dan yang menimbulkan error merge dan error compile. \textbf{Selamat mencoba}.
+\end{enumerate} 
