@@ -59,3 +59,71 @@ Sebelum mempelajari lebih dalam mengenai github, disini akan dijelaskan bagaiman
 \label{8}
 \end{figure} 
 \end{enumerate}
+
+\section{Membuat Akun Gitlab}
+Gitlab ini sama halnya dengan Github dimana kalangan developer biasanya menggunakan Gitlab sebagai tempat penyimpanan project-project open source sehingga dapat dikembangkan oleh programmer lain baik sebagai team maupun individual. Namun, terdapat perbedaan antara Github dan Gitlab sebagai berikut :
+\begin{itemize}
+\item Menawarkan public project dan private project
+\subitem fitur public dan private pada Gitlab dapat kita akses secara gratis, beda halnya dengan Github yang hanya menyediakan public saja yang secara gratis.
+\item Snippet support 
+\subitem pada Gitlab terdapat fitur ini yaitu memungkinkan pengguna dapat berbagi potongan kecil source code tanpa membagikan keseluruhan code.
+\item Progress status
+\subitem Pada Gitlab para developer dapat memberikan label dalam project yang sedang dikerjakan dengan label \textit{Work in Progress} sehingga dapat memberikan kejelasan atas project yang sedang dibuat atau dikembangkan.
+	Setelah mengetahui sedikit tentang perbedaan antara Github dan Gitlab, kita akan mencoba membuat akun Gitlab. Sebelum kita membuat ternyata Gitlab terintegrasi dengan Github :
+\end{itemize}
+
+\begin{enumerate}
+\item Pertama, buka browser dan masukkan alamat Gitlab dengan url : \textbf{https://gitlab.com} seperti pada gambar \ref{urlgitlab}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab1.jpg}}
+\caption{URL Gitlab}
+\label{urlgitlab}
+\end{figure}
+
+\item Karena Gitlab ini terintegrasi dengan Github, maka jika sudah mempunyai akun Github kita tinggal sign in menggunakan akun Github seperti pada gambar \ref{signingithub}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab2.jpg}}
+\caption{Sign in with Github}
+\label{signingithub}
+\end{figure}
+
+\item Setelah itu, kita authorized akun Github ke dalam akun Gitlab
+
+\item Setelah berhasil maka kita diarahkan ke halaman seperti pada gambar \ref{hlmgitlab}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab3.jpg}}
+\caption{Halaman Gitlab}
+\label{hlmgitlab}
+\end{figure}
+
+\item Selanjutnya kita akan configurasi SSH key pada Gitlab \ref{sshkey}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab5.jpg}}
+\caption{SSH key}
+\label{sshkey}
+\end{figure}
+
+\item kita ambil SSH key yang sudah kita buat pada akun Github, kita buka Git Bash ketikan seperti gamabar \ref{sshbash}
+\subitem \textbf{cd .ssh}, kita masuk ke direktori .ssh
+\subitem \textbf{ls}, untuk melihat list file yang terdapat pada direktori .ssh
+\subitem \textbf{cat id\_rsa.pub}, lalu kita panggil ssh key dalam file id\_rsa.pub
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab6.jpg}}
+\caption{Ambil SSH key menggunakan Git Bash}
+\label{sshbash}
+\end{figure}
+
+\item Setelah kita mendapatkan SSH key kita, lalu kita copy paste ke dalam SSH key Gitlab spserti pada gambar \ref{copypaste}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab7.jpg}}
+\caption{Copy paste SSH key Bash ke dalam SSH key Gitlab}
+\label{copypaste}
+\end{figure}
+
+\item Selanjutnya jika sudah memasukkan SSH key kita dapat memulai menggunakan Gitlab kita, untuk membuat project baru klik tombol new project seperti pada gambar \ref{newproject}
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=.75\textwidth]{Figures/akunGit/gitlab8.jpg}}
+\caption{Membuat Project baru}
+\label{newproject}
+\end{figure}
+\end{enumerate}
