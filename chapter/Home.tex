@@ -173,7 +173,7 @@ fatal: not a git repository (or any of the parent directories): .git
 Sebagai contoh pada gambar \ref{configglobal} terlihat di ujung sebelum perintah dimasukkan ada tulisan \textit{master} warna biru muda. Itu artinya kita berada pada direktori repositori dengan \textit{branch} master. Di sebelah kiri \textit{master} ada tulisan kuning \textit{/A/Git/git}, yang artinya kita berada pada drive \textit{A:} windows. Pada drive \textit{A:} tersebut ada folder Git(G besar) yang didalam folder Git ada repo clone dengan folder git(g kecil). Posisi kita ada di dalam folder git tersebut.
 Sebagai contoh kedua pada gambar \ref{penanda}, maka tulisan pada git bash tempat kita bekerja menjadi \textit{/D/git/git} atau \textit{/D/git/git/chapter}.
 
-\subsubsection{Gagal Fetch Upstream}
+\subsubsection{Gagal Fetch Upstream pada Github}
 Apabila anda pada saat melakukan \textit{git fetch upstream} atau \textit{git pull upstream master} keluar error seperti pada listing \ref{lst:errorfetchupstream}. 
 \begin{lstlisting}[caption=Gagal melakukan fetch upstream,label={lst:errorfetchupstream}]
 fatal: 'upstream' does not appear to be a git repository
@@ -202,6 +202,19 @@ remote.upstream.fetch=+refs/heads/*:refs/remotes/upstream/*
 Pastikan upstream berbentuk \textit{https} bukan \textit{ssh}. Apabila anda salah melakukan setting upstream anda bisa menghapusnya dengan perintah yang ada di listing \ref{lst:removeupstream}. Baru setelah itu lakukan lagi set upstream dengan perintah di listin \ref{lst:addupstream}.
 \begin{lstlisting}[caption=Perintah menghapus upstream yang salah,label={lst:removeupstream}]
 git remote remove upstream
+\end{lstlisting}
+
+\subsubsection{Gagal Fetch Upstream pada Gitlab}
+Apabila pada saat melakukan \textbf{git fetch upstream} terjadi kesalahan seperti berikut \ref{lst:accessdeniedls}
+\begin{lstlisting}[caption=Access Denied,label={lst:accessdeniedls}]
+remote: HTTP Basic: Access denied
+fatal: Authentication failed for 'https://gitlab.com/RepoAsal/Testing.git'
+\end{lstlisting}
+
+Maka cara yang dilakukan yaitu ganti clone https di repositori utama menjadi clone ssh repositori utama sehingga pada saat remote repositori utama \ref{lst:remotegitlab}
+
+\begin{lstlisting}[caption=perintah remote repo utama,label={lst:remotegitlab}]
+git remote add upstream git@gitlab.com:RepoAsal/Testing.git'
 \end{lstlisting}
 
 \subsubsection{Salah Clone}
