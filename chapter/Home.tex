@@ -101,13 +101,11 @@ git remote add upstream https://github.com/RepoAsal/Testing.git
 \end{lstlisting}
 
 
-Setelah melakukan \textit{setting} sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan perintah listing \ref{lst:sinkronisasifork}.
+Setelah melakukan \textit{setting} upstream sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan perintah listing \ref{lst:sinkronisasifork}.
 
 \begin{lstlisting}[caption=Perintah Sinkronisasi dengan repo asal,label={lst:sinkronisasifork}]
-git pull origin master
 git fetch upstream
 git pull upstream master
-git push origin master
 \end{lstlisting}
 
 
