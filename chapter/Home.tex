@@ -100,14 +100,17 @@ Karena ini repo hasil Fork maka kita harus selalu di sinkronisasi dari repo asli
 git remote add upstream https://github.com/RepoAsal/Testing.git
 \end{lstlisting}
 
+\par \textbf{Catatan:} 
+\par pada saat menginputkan git remote add upstream repo hasil clone \textbf{\textit{'upstream'}} disini merupakan alias jadi kalian bisa ubah sesuai keinginan kalian, namun harus diingat ketika melakukan sinkronisasi akan dipanggil sesuai dengan yang telah kita daftarkan sebelumnya di git remote.
 
-Setelah melakukan \textit{setting} upstream sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan perintah listing \ref{lst:sinkronisasifork}.
+\par Setelah melakukan \textit{setting} upstream sekali di awal, kemudian selanjutnya kita tinggal melakukan sinkronisasi terus menerus sebelum melakukan perubahan dengan perintah listing \ref{lst:sinkronisasifork}.
 
 \begin{lstlisting}[caption=Perintah Sinkronisasi dengan repo asal,label={lst:sinkronisasifork}]
 git fetch upstream
 git pull upstream master
 \end{lstlisting}
 
+ sesuaikan \textbf{\textit{'upstream'}} diatas dengan alias yang kalian inputkan sebelumnya pada saat git remote 
 
 \subsection{Bekerja dengan Git Bash}
 Sekarang kita mulai bekerja pada repo kita. Melakukan penambahan atau perubahan pada \textit{file}. Kemudian perubahan tersebut diminta untuk dimasukkan di repo utama tempat kita \textit{fork} repo kita. Urutan pekerjaan yang kita ulang terus menerus adalah sebagai berikut :
